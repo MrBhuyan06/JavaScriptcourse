@@ -90,49 +90,94 @@
 // Basic Operater
 // Arthimatic operator
 
-const now = 2037;
+// const now = 2037;
 
-const ageAbhi = now - 2000;
-const ageSmriti = now - 2001;
-console.log(ageAbhi, ageSmriti);
+// const ageAbhi = now - 2000;
+// const ageSmriti = now - 2001;
+// console.log(ageAbhi, ageSmriti);
 
-console.log(ageAbhi * 2, ageSmriti / 2, 2 ** 3);
-// 2 ** 3 means 2 to the power 3=2*2*2
+// console.log(ageAbhi * 2, ageSmriti / 2, 2 ** 3);
+// // 2 ** 3 means 2 to the power 3=2*2*2
+
+// const firstName = "Abhihske";
+// const lastName = "Bhuyan";
+// console.log(firstName + " " + lastName);
+
+// // Assigmental Operater
+// /**
+//  * let x=2+3;
+//  */
+// let x = 2 + 3;
+// console.log(x);
+// x += 10; //x=x+10
+// x *= 10; //x=x+10
+// x /= 10; //x=x+10
+// x -= 10; //x=x+10
+// x++; // x=x+1
+// x--; //x=x-1
+// --x; //x=x-1
+// ++x;
+// console.log(x);
+
+// //comparision operater
+
+// console.log(ageAbhi > ageSmriti);
+// // >,<, <=,>=,
+// console.log(ageAbhi >= 37);
+
+// const isFullAge = ageAbhi >= 37;
+
+// console.log(now - 2000 >= now - 2001);
+// //Operater Precedence
+// console.log(25 - 10 - 23);
+// let y, z;
+// y = z = 25 - 10 - 5;
+// console.log(y, z);
+
+// const avgAge = (ageAbhi + ageSmriti) / 2;
+// console.log(ageAbhi, ageSmriti, avgAge);
+
+// Template Literals
 
 const firstName = "Abhihske";
-const lastName = "Bhuyan";
-console.log(firstName + " " + lastName);
+const job = "coder";
+const age = 23;
+const year = 2037;
+const Abhishek =
+  "I' am " + firstName + ", A " + (year - age) + " year old" + job + "!";
+console.log(Abhishek);
 
-// Assigmental Operater
-/**
- * let x=2+3;
- */
-let x = 2 + 3;
-console.log(x);
-x += 10; //x=x+10
-x *= 10; //x=x+10
-x /= 10; //x=x+10
-x -= 10; //x=x+10
-x++; // x=x+1
-x--; //x=x-1
---x; //x=x-1
-++x;
-console.log(x);
+const abhiNew = `I' am ${firstName} , A ${year - age} year old ${job}!`;
+console.log(abhiNew);
 
-//comparision operater
+console.log(`Just A rgular String...`);
+console.log(
+  "string with \n\
+multiple line \n\
+"
+);
+console.log(`String
+multiline
+string
+`);
 
-console.log(ageAbhi > ageSmriti);
-// >,<, <=,>=,
-console.log(ageAbhi >= 37);
+// If and else statement
 
-const isFullAge = ageAbhi >= 37;
+const legalage = 12;
+const isOldEnough = legalage >= 18;
+if (isOldEnough) {
+  console.log("He is legal to Drive 🚘");
+} else {
+  const leftYear = 18 - legalage;
+  console.log(`
+  Opps Abhi is too Young . waith another ${leftYear} years`);
+}
 
-console.log(now - 2000 >= now - 2001);
-//Operater Precedence
-console.log(25 - 10 - 23);
-let y, z;
-y = z = 25 - 10 - 5;
-console.log(y, z);
-
-const avgAge = (ageAbhi + ageSmriti) / 2;
-console.log(ageAbhi, ageSmriti, avgAge);
+const birthYear = 20150;
+let century;
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);
