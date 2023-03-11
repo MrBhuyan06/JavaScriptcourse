@@ -351,3 +351,25 @@ if (day === "monday") {
 if (23 >= 10) {
   const str = "23 is bigger";
 }
+
+console.log(`I am ${2037 - 1991}`);
+
+// Conditonal Operator
+
+const age = 23;
+
+age >= 18 ? console.log("you are a Adult") : console.log("you are not a Adlut");
+
+const drink = age >= 18 ? "wine" : "water "; // this is an expression
+
+console.log(drink);
+
+let drink2;
+if (age >= 18) {
+  drink2 = "wine";
+} else {
+  drink2 = "water";
+}
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? "wine" : "water "}`);
