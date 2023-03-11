@@ -338,3 +338,16 @@ if (day === "monday") {
 } else {
   console.log("Not a vaid Day");
 }
+
+// Statement And Expressions
+
+// An expression is somethink which Produce a value
+// 12+3
+// 1991
+// true && false && !false
+
+// An stament is somethink which is a bigger piece of code that executed that didnot produce a value  is perform a action
+
+if (23 >= 10) {
+  const str = "23 is bigger";
+}
