@@ -229,3 +229,39 @@ if (height) {
 } else {
   console.log("Height is undefine");
 }
+
+// equality operator;
+// Strict operater
+// const ages = 18;
+// if (ages === 18) {
+//   console.log(`You Just an adult`);
+// } else {
+//   console.log("You Are a under age");
+// }
+
+// Losely equil
+const ages = "18";
+if (ages == 18) {
+  console.log(`You Just an adult`);
+} else {
+  console.log("You Are a under age");
+}
+
+let favNumber = Number(prompt("What's Your Favourite Number"));
+console.log(favNumber);
+
+if (favNumber === 23) {
+  // '23' from prompt is type coersion and i compare to 23 number
+  console.log("Cool! 23 is an amazing number");
+} else if (favNumber === 7) {
+  console.log("7 is also a Cool Number");
+} else if (favNumber === 9) {
+  console.log("9 is also a Cool Number");
+} else {
+  console.log("Number is no 7 and 23");
+}
+
+// different operator or not equal to operato
+if (favNumber !== 23) {
+  console.log("why not to try 23");
+}
