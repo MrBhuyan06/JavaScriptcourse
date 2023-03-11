@@ -297,3 +297,44 @@ if (hasDriverLicense && hasGoodVision && isTried) {
 } else {
   console.log("Good for drive");
 }
+// Switch Statements
+
+const day = "monday";
+
+switch (day) {
+  case "monday": // day as key== case as pair
+    console.log("JavaScript");
+    console.log("Go to Coding MeetUp");
+    break;
+  case "tuesday":
+    console.log("prepare theory video");
+    break;
+  case "wednesday":
+  case "thursday":
+    console.log("Write code example");
+    break;
+  case "friday":
+    console.log("record Video");
+    break;
+  case "saturday":
+  case "sunday":
+    console.log("enjoy the weekend");
+    break;
+  default:
+    console.log("Not a valid Day !");
+}
+
+if (day === "monday") {
+  console.log("JavaScript");
+  console.log("Go to Coding MeetUp");
+} else if (day === "tuesday") {
+  console.log("prepare theory video");
+} else if (day === "wednesday" || day === "thrusday") {
+  console.log("Write code example");
+} else if (day === "friday") {
+  console.log("record a Video");
+} else if (day === "sturday" || day === "sunday") {
+  console.log("Its A Weekend");
+} else {
+  console.log("Not a vaid Day");
+}
