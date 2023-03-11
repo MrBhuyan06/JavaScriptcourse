@@ -181,3 +181,51 @@ if (birthYear <= 2000) {
   century = 21;
 }
 console.log(century);
+
+// Type conversion and coercion
+const inputYear = "1991";
+console.log(Number(inputYear), inputYear);
+console.log(+inputYear + 18);
+// OR
+console.log(Number(inputYear) + 18);
+console.log(Number("1991"));
+console.log(String(23), 23);
+console.log(23 + "", 23);
+
+// type coercion
+console.log("iam" + 23 + "years old");
+console.log("20" - "10" - 3);
+console.log("20" * "2");
+console.log("20" / "2");
+
+// guess the ouput
+
+let n = "1" + 1;
+n = n - 1;
+console.log(n); // Output 10
+
+// truthy and falsy value
+
+// js there is 5 fasly value 0,'',undefine, null, NaN
+
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean(""));
+console.log(Boolean("abhi"));
+console.log(Boolean(NaN));
+console.log(Boolean(null));
+
+const money = 100;
+
+if (money) {
+  console.log("Don't spend it alll;");
+} else {
+  console.log("You Should get a job");
+}
+
+let height = 0;
+if (height) {
+  console.log("Hey height is define");
+} else {
+  console.log("Height is undefine");
+}
