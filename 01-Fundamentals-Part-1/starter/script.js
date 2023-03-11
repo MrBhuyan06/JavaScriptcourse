@@ -373,3 +373,17 @@ if (age >= 18) {
 console.log(drink2);
 
 console.log(`I like to drink ${age >= 18 ? "wine" : "water "}`);
+
+const bill = Number(prompt("Please Enter The Bill Amount"));
+
+bill >= 50 && bill <= 300
+  ? console.log(
+      `The Bill Value is ${bill} and the tip is 15% ${
+        (15 / 100) * bill
+      } and the total is ${bill + bill * (15 / 100)}   `
+    )
+  : console.log(
+      `The Bill Value is ${bill} and the tip is 20% ${
+        bill * (20 / 100)
+      } and the total is ${bill + bill * (20 / 100)}   `
+    );
