@@ -49,5 +49,23 @@ console.log(age1);
 const calcAge2 = function (birthYeah) {
   return 2037 - birthYeah;
 };
+console.log("Hello", calcAge2(2000));
 const age2 = calcAge2(2000);
 console.log(age2);
+
+// Arrow Function
+// 1. parameter and and return just line of code
+const calsAge3 = (birthyeah) => 2037 - birthyeah;
+
+const age3 = calsAge3(2000);
+console.log(age1, age2, age3);
+
+const yearsUntilRetirement = (birthyeah, firstName) => {
+  const currentAge = 2037 - birthyeah;
+  const retirement = 65 - currentAge;
+  return `${firstName} retires in ${retirement}`;
+};
+console.log(yearsUntilRetirement(1991, "Abhihske"));
+console.log(yearsUntilRetirement(2000, "Mr Bhuyan"));
+
+// Arrow function didnot get this keyWord
