@@ -361,7 +361,8 @@ const age = 23;
 
 age >= 18 ? console.log("you are a Adult") : console.log("you are not a Adlut");
 
-const drink = age >= 18 ? "wine" : "water "; // this is an expression
+// const drink = age >= 18 ? "wine" : "water "; // this is an expression
+let drink; // this is an expression
 
 console.log(drink);
 
@@ -373,7 +374,7 @@ if (age >= 18) {
 }
 console.log(drink2);
 
-console.log(`I like to drink ${age >= 18 ? "wine" : "water "}`);
+console.log(`I like to drink some ${(drink = age >= 18 ? "wine" : "water ")}`);
 
 const bill = Number(prompt("Please Enter The Bill Amount"));
 
