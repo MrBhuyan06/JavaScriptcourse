@@ -192,10 +192,64 @@
 
 // Object
 // object Literal
+// const Abhi = {
+//   firstName: "Abhihske",
+//   lastName: "Bhuyan",
+//   age: 2023 - 2000,
+//   job: "Student",
+//   friends: ["Abhihske", "Gudu", "Danny"],
+//   carrer: {
+//     10: "Stewart",
+//     12: "Stewart",
+//     13: "Cutm",
+//     UG: "Cutm",
+//   },
+// };
+// console.log(Abhi);
+
+// // Access Data From the Object 2 way
+// // 1.Dot Notation
+// console.log(Abhi.lastName);
+// // Barcket Notation
+// // [inside this we put the expres]
+// const nameKey = "Name";
+// console.log(Abhi["firstName"]);
+
+// // console.log(Abhi["fistName" + nameKey]);
+// console.log(Abhi["first" + nameKey]);
+
+// const interestIn = prompt(
+//   "What do you wan to About Abhi choose between firstName,LastName,age, Job and Friend"
+// );
+// console.log(interestIn);
+// // console.log(Abhi.interestIn); // undefine
+
+// if (Abhi[interestIn]) {
+//   console.log(Abhi[interestIn]); //
+// } else {
+//   console.log(
+//     "Wrong Request What do you wan to About Abhi choose between firstName,LastName,age, Job and Friend"
+//   );
+// }
+
+// Abhi.location = "India";
+// Abhi["twitter"] = "@abhi06Bhuyna";
+
+// console.log(Abhi);
+
+// // challenge
+// // "Abhi Has 3 friend and his best freind is gudu" Dynamically
+// console.log(
+//   `Abhi has ${Abhi.friends.length} and his best friend is ${Abhi.friends[0]}`
+// );
+
+// Object Method
+
 const Abhi = {
   firstName: "Abhihske",
   lastName: "Bhuyan",
-  age: 2023 - 2000,
+  birthYeah: 2000,
+  hasDrivingLicence: false,
   job: "Student",
   friends: ["Abhihske", "Gudu", "Danny"],
   carrer: {
@@ -204,41 +258,43 @@ const Abhi = {
     13: "Cutm",
     UG: "Cutm",
   },
+  // calcAge: function () // function Values
+  // {
+  //   console.log(this);
+  //   return 2023 -birthYeah;
+  // },
+
+  // calcAge: function () // function using Thid
+  // {
+  //   console.log(this);
+  //   return 2023 - this.birthYeah;
+  // },
+  calcAge:
+    function () // function using this and strore the result in the new property
+    {
+      console.log(this);
+      this.age = 2023 - this.birthYeah;
+      return this.age;
+    },
+  getSummary: function () {
+    return `               First Name:${this.firstName}
+               lastName:${this.lastName}
+               job:${this.job}
+               Adult:${this.hasDrivingLicence}
+               carrer:${this.carrer.UG}`;
+  },
+  getSummary2: function () {
+    return `${this.firstName} is a ${this.age} year old ${this.job} and ${
+      this.hasDrivingLicence
+        ? "he has driving license "
+        : "he has no driving lincense"
+    }`;
+  },
 };
-console.log(Abhi);
-
-// Access Data From the Object 2 way
-// 1.Dot Notation
-console.log(Abhi.lastName);
-// Barcket Notation
-// [inside this we put the expres]
-const nameKey = "Name";
-console.log(Abhi["firstName"]);
-
-// console.log(Abhi["fistName" + nameKey]);
-console.log(Abhi["first" + nameKey]);
-
-const interestIn = prompt(
-  "What do you wan to About Abhi choose between firstName,LastName,age, Job and Friend"
-);
-console.log(interestIn);
-// console.log(Abhi.interestIn); // undefine
-
-if (Abhi[interestIn]) {
-  console.log(Abhi[interestIn]); //
-} else {
-  console.log(
-    "Wrong Request What do you wan to About Abhi choose between firstName,LastName,age, Job and Friend"
-  );
-}
-
-Abhi.location = "India";
-Abhi["twitter"] = "@abhi06Bhuyna";
-
-console.log(Abhi);
-
-// challenge
-// "Abhi Has 3 friend and his best freind is gudu" Dynamically
-console.log(
-  `Abhi has ${Abhi.friends.length} and his best friend is ${Abhi.friends[0]}`
-);
+console.log(Abhi.calcAge());
+// console.log(Abhi["calcAge"]());
+console.log(Abhi.age);
+// challenges to define a method in object as get summarry and retrun a summary String
+//"Abhi i s A 46 -year Old teacher , and he has a driver license"
+console.log(Abhi.getSummary());
+console.log(Abhi.getSummary2());
