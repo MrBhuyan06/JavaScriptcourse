@@ -185,3 +185,7 @@ console.log(friends.indexOf("bob")); // return -1
 // include moderm es6 methods return Boolean values
 console.log(friends.includes("Steven"));
 console.log(friends.includes("Bob"));
+
+if (friends.includes("Peter")) {
+  console.log("you have a friend called Peter");
+}
