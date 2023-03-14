@@ -154,38 +154,91 @@
 
 // Array Method
 
-const friends = ["Michael", "Steven", "Peter"];
-const newLenght = friends.push("jay"); // return the new Array Length
-console.log(friends);
-console.log(newLenght);
-// Attached to the end of the Array
+// const friends = ["Michael", "Steven", "Peter"];
+// const newLenght = friends.push("jay"); // return the new Array Length
+// console.log(friends);
+// console.log(newLenght);
+// // Attached to the end of the Array
 
-// Add Element to the being
-friends.unshift("John"); // return the Length of the new Array
-console.log(friends);
+// // Add Element to the being
+// friends.unshift("John"); // return the Length of the new Array
+// console.log(friends);
 
-// Remove Element form the last position
-console.log(`Before Pop ${friends}`);
-const popElement = friends.pop(); // return pop Element
-console.log(popElement);
-console.log(friends);
-console.log(`After Pop ${friends}`);
+// // Remove Element form the last position
+// console.log(`Before Pop ${friends}`);
+// const popElement = friends.pop(); // return pop Element
+// console.log(popElement);
+// console.log(friends);
+// console.log(`After Pop ${friends}`);
 
-//Remove Element form Starting postion
-console.log(`Before Shit ${friends}`);
-const shiftElement = friends.shift(); // return shift Element
-console.log(shiftElement);
-console.log(`After Shift ${friends}`);
+// //Remove Element form Starting postion
+// console.log(`Before Shit ${friends}`);
+// const shiftElement = friends.shift(); // return shift Element
+// console.log(shiftElement);
+// console.log(`After Shift ${friends}`);
 
-//indexOf or postion of the element
+// //indexOf or postion of the element
 
-console.log(friends.indexOf("Steven"));
-console.log(friends.indexOf("bob")); // return -1
+// console.log(friends.indexOf("Steven"));
+// console.log(friends.indexOf("bob")); // return -1
 
-// include moderm es6 methods return Boolean values
-console.log(friends.includes("Steven"));
-console.log(friends.includes("Bob"));
+// // include moderm es6 methods return Boolean values
+// console.log(friends.includes("Steven"));
+// console.log(friends.includes("Bob"));
 
-if (friends.includes("Peter")) {
-  console.log("you have a friend called Peter");
+// if (friends.includes("Peter")) {
+//   console.log("you have a friend called Peter");
+// }
+
+// Object
+// object Literal
+const Abhi = {
+  firstName: "Abhihske",
+  lastName: "Bhuyan",
+  age: 2023 - 2000,
+  job: "Student",
+  friends: ["Abhihske", "Gudu", "Danny"],
+  carrer: {
+    10: "Stewart",
+    12: "Stewart",
+    13: "Cutm",
+    UG: "Cutm",
+  },
+};
+console.log(Abhi);
+
+// Access Data From the Object 2 way
+// 1.Dot Notation
+console.log(Abhi.lastName);
+// Barcket Notation
+// [inside this we put the expres]
+const nameKey = "Name";
+console.log(Abhi["firstName"]);
+
+// console.log(Abhi["fistName" + nameKey]);
+console.log(Abhi["first" + nameKey]);
+
+const interestIn = prompt(
+  "What do you wan to About Abhi choose between firstName,LastName,age, Job and Friend"
+);
+console.log(interestIn);
+// console.log(Abhi.interestIn); // undefine
+
+if (Abhi[interestIn]) {
+  console.log(Abhi[interestIn]); //
+} else {
+  console.log(
+    "Wrong Request What do you wan to About Abhi choose between firstName,LastName,age, Job and Friend"
+  );
 }
+
+Abhi.location = "India";
+Abhi["twitter"] = "@abhi06Bhuyna";
+
+console.log(Abhi);
+
+// challenge
+// "Abhi Has 3 friend and his best freind is gudu" Dynamically
+console.log(
+  `Abhi has ${Abhi.friends.length} and his best friend is ${Abhi.friends[0]}`
+);
