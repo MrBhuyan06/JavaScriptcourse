@@ -372,14 +372,14 @@
 
 // Looping BackWards And Loops In Loops
 
-const abhiArray = [
-  "Abhihske",
-  "Bhuyan",
-  2023 - 2000,
-  "Student",
-  ["Michael", "Peter", "Steven"],
-  true,
-];
+// const abhiArray = [
+//   "Abhihske",
+//   "Bhuyan",
+//   2023 - 2000,
+//   "Student",
+//   ["Michael", "Peter", "Steven"],
+//   true,
+// ];
 
 // 0, 1, 2, 3
 //4,3,2,1
@@ -390,9 +390,31 @@ const abhiArray = [
 
 // loop inside a loop
 
-for (let excersie = 1; excersie < 4; excersie++) {
-  console.log(`-------Starting exercise ${excersie}`);
-  for (let rep = 1; rep <= 5; rep++) {
-    console.log(`Lifthing weight repetition ${rep}`);
-  }
+// for (let excersie = 1; excersie < 4; excersie++) {
+//   console.log(`-------Starting exercise ${excersie}`);
+//   for (let rep = 1; rep <= 5; rep++) {
+//     console.log(`Lifthing weight repetition ${rep}`);
+//   }
+// }
+
+// for (let rep = 1; rep <= 10; rep++) {
+//   console.log(`FOR LOOP:- Lifing weight repetition ${rep}🤸`);
+// }
+
+// While Loop
+
+// let count = 1;
+// while (count <= 10) {
+//   console.log(`WHILE-:Lifting weight repetition ${count}🤸`);
+//   count++;
+// }
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+// console.log(dice);
+
+while (dice !== 6) {
+  console.log(`You rooled a ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  console.log(dice);
+  if (dice === 6) console.log("Loop is about to end");
 }
