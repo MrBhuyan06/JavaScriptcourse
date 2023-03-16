@@ -298,3 +298,74 @@ console.log(Abhi.age);
 //"Abhi i s A 46 -year Old teacher , and he has a driver license"
 console.log(Abhi.getSummary());
 console.log(Abhi.getSummary2());
+
+//iteration
+
+// console.log("Lifing weight repetition 1🤸 ");
+// console.log("Lifing weight repetition 2🤸 ");
+// console.log("Lifing weight repetition 3🤸 ");
+// console.log("Lifing weight repetition 4🤸 ");
+// console.log("Lifing weight repetition 5🤸 ");
+// console.log("Lifing weight repetition 6🤸 ");
+// console.log("Lifing weight repetition 7🤸 ");
+// console.log("Lifing weight repetition 8🤸 ");
+// console.log("Lifing weight repetition 9🤸 ");
+// console.log("Lifing weight repetition 10🤸 ");
+
+//For loop  keep ruuning while the condition is true
+for (let rep = 1; rep <= 10; rep++) {
+  if (rep >= 5) {
+    console.log(`Lifing weight repetition ${rep}🤸`);
+  }
+}
+
+// Loop Through
+
+const abhiArray = [
+  "Abhihske",
+  "Bhuyan",
+  2023 - 2000,
+  "Student",
+  ["Michael", "Peter", "Steven"],
+  true,
+];
+
+console.log(abhiArray[0]);
+console.log(abhiArray[1]);
+console.log(abhiArray[2]);
+
+const types = [];
+for (let i = 0; i < abhiArray.length; i++) {
+  console.log(abhiArray[i], typeof abhiArray[i]);
+  //Filling types Array
+  // types[i] = typeof abhiArray[i];
+  types.push(typeof abhiArray[i]);
+}
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2023 - years[i]);
+}
+console.log(ages);
+
+// contiues and break Statement
+
+for (let i = 0; i < abhiArray.length; i++) {
+  if (typeof abhiArray[i] !== "string") continue;
+
+  console.log(abhiArray[i], typeof abhiArray[i]);
+  //Filling types Array
+  // types[i] = typeof abhiArray[i];
+  // types.push(typeof abhiArray[i]);
+}
+
+//break
+console.log("-BREAK With NUMBER");
+for (let i = 0; i < abhiArray.length; i++) {
+  if (typeof abhiArray[i] === "number") break;
+
+  console.log(abhiArray[i], typeof abhiArray[i]);
+}
