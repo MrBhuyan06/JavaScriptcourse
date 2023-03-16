@@ -245,81 +245,132 @@
 
 // Object Method
 
-const Abhi = {
-  firstName: "Abhihske",
-  lastName: "Bhuyan",
-  birthYeah: 2000,
-  hasDrivingLicence: false,
-  job: "Student",
-  friends: ["Abhihske", "Gudu", "Danny"],
-  carrer: {
-    10: "Stewart",
-    12: "Stewart",
-    13: "Cutm",
-    UG: "Cutm",
-  },
-  // calcAge: function () // function Values
-  // {
-  //   console.log(this);
-  //   return 2023 -birthYeah;
-  // },
+// const Abhi = {
+//   firstName: "Abhihske",
+//   lastName: "Bhuyan",
+//   birthYeah: 2000,
+//   hasDrivingLicence: false,
+//   job: "Student",
+//   friends: ["Abhihske", "Gudu", "Danny"],
+//   carrer: {
+//     10: "Stewart",
+//     12: "Stewart",
+//     13: "Cutm",
+//     UG: "Cutm",
+//   },
+//   // calcAge: function () // function Values
+//   // {
+//   //   console.log(this);
+//   //   return 2023 -birthYeah;
+//   // },
 
-  // calcAge: function () // function using Thid
-  // {
-  //   console.log(this);
-  //   return 2023 - this.birthYeah;
-  // },
-  calcAge:
-    function () // function using this and strore the result in the new property
-    {
-      console.log(this);
-      this.age = 2023 - this.birthYeah;
-      return this.age;
-    },
-  getSummary: function () {
-    return `               First Name:${this.firstName}
-               lastName:${this.lastName}
-               job:${this.job}
-               Adult:${this.hasDrivingLicence}
-               carrer:${this.carrer.UG}`;
-  },
-  getSummary2: function () {
-    return `${this.firstName} is a ${this.age} year old ${this.job} and ${
-      this.hasDrivingLicence
-        ? "he has driving license "
-        : "he has no driving lincense"
-    }`;
-  },
-};
-console.log(Abhi.calcAge());
-// console.log(Abhi["calcAge"]());
-console.log(Abhi.age);
-// challenges to define a method in object as get summarry and retrun a summary String
-//"Abhi i s A 46 -year Old teacher , and he has a driver license"
-console.log(Abhi.getSummary());
-console.log(Abhi.getSummary2());
+//   // calcAge: function () // function using Thid
+//   // {
+//   //   console.log(this);
+//   //   return 2023 - this.birthYeah;
+//   // },
+//   calcAge:
+//     function () // function using this and strore the result in the new property
+//     {
+//       console.log(this);
+//       this.age = 2023 - this.birthYeah;
+//       return this.age;
+//     },
+//   getSummary: function () {
+//     return `               First Name:${this.firstName}
+//                lastName:${this.lastName}
+//                job:${this.job}
+//                Adult:${this.hasDrivingLicence}
+//                carrer:${this.carrer.UG}`;
+//   },
+//   getSummary2: function () {
+//     return `${this.firstName} is a ${this.age} year old ${this.job} and ${
+//       this.hasDrivingLicence
+//         ? "he has driving license "
+//         : "he has no driving lincense"
+//     }`;
+//   },
+// };
+// console.log(Abhi.calcAge());
+// // console.log(Abhi["calcAge"]());
+// console.log(Abhi.age);
+// // challenges to define a method in object as get summarry and retrun a summary String
+// //"Abhi i s A 46 -year Old teacher , and he has a driver license"
+// console.log(Abhi.getSummary());
+// console.log(Abhi.getSummary2());
 
-//iteration
+// //iteration
 
-// console.log("Lifing weight repetition 1🤸 ");
-// console.log("Lifing weight repetition 2🤸 ");
-// console.log("Lifing weight repetition 3🤸 ");
-// console.log("Lifing weight repetition 4🤸 ");
-// console.log("Lifing weight repetition 5🤸 ");
-// console.log("Lifing weight repetition 6🤸 ");
-// console.log("Lifing weight repetition 7🤸 ");
-// console.log("Lifing weight repetition 8🤸 ");
-// console.log("Lifing weight repetition 9🤸 ");
-// console.log("Lifing weight repetition 10🤸 ");
+// // console.log("Lifing weight repetition 1🤸 ");
+// // console.log("Lifing weight repetition 2🤸 ");
+// // console.log("Lifing weight repetition 3🤸 ");
+// // console.log("Lifing weight repetition 4🤸 ");
+// // console.log("Lifing weight repetition 5🤸 ");
+// // console.log("Lifing weight repetition 6🤸 ");
+// // console.log("Lifing weight repetition 7🤸 ");
+// // console.log("Lifing weight repetition 8🤸 ");
+// // console.log("Lifing weight repetition 9🤸 ");
+// // console.log("Lifing weight repetition 10🤸 ");
 
-//For loop  keep ruuning while the condition is true
-for (let rep = 1; rep <= 10; rep++) {
-  if (rep >= 5) {
-    console.log(`Lifing weight repetition ${rep}🤸`);
-  }
-}
+// //For loop  keep ruuning while the condition is true
+// for (let rep = 1; rep <= 10; rep++) {
+//   if (rep >= 5) {
+//     console.log(`Lifing weight repetition ${rep}🤸`);
+//   }
+// }
 
-// Loop Through
+// // Loop Through
+
+// const abhiArray = [
+//   "Abhihske",
+//   "Bhuyan",
+//   2023 - 2000,
+//   "Student",
+//   ["Michael", "Peter", "Steven"],
+//   true,
+// ];
+
+// console.log(abhiArray[0]);
+// console.log(abhiArray[1]);
+// console.log(abhiArray[2]);
+
+// const types = [];
+// for (let i = 0; i < abhiArray.length; i++) {
+//   console.log(abhiArray[i], typeof abhiArray[i]);
+//   //Filling types Array
+//   // types[i] = typeof abhiArray[i];
+//   types.push(typeof abhiArray[i]);
+// }
+// console.log(types);
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++) {
+//   ages.push(2023 - years[i]);
+// }
+// console.log(ages);
+
+// // contiues and break Statement
+
+// for (let i = 0; i < abhiArray.length; i++) {
+//   if (typeof abhiArray[i] !== "string") continue;
+
+//   console.log(abhiArray[i], typeof abhiArray[i]);
+//   //Filling types Array
+//   // types[i] = typeof abhiArray[i];
+//   // types.push(typeof abhiArray[i]);
+// }
+
+// //break
+// console.log("-BREAK With NUMBER");
+// for (let i = 0; i < abhiArray.length; i++) {
+//   if (typeof abhiArray[i] === "number") break;
+
+//   console.log(abhiArray[i], typeof abhiArray[i]);
+// }
+
+// Looping BackWards And Loops In Loops
 
 const abhiArray = [
   "Abhihske",
@@ -330,42 +381,18 @@ const abhiArray = [
   true,
 ];
 
-console.log(abhiArray[0]);
-console.log(abhiArray[1]);
-console.log(abhiArray[2]);
+// 0, 1, 2, 3
+//4,3,2,1
 
-const types = [];
-for (let i = 0; i < abhiArray.length; i++) {
-  console.log(abhiArray[i], typeof abhiArray[i]);
-  //Filling types Array
-  // types[i] = typeof abhiArray[i];
-  types.push(typeof abhiArray[i]);
-}
-console.log(types);
+// for (let i = abhiArray.length - 1; i >= 0; i--) {
+//   console.log(i, abhiArray[i]);
+// }
 
-const years = [1991, 2007, 1969, 2020];
-const ages = [];
+// loop inside a loop
 
-for (let i = 0; i < years.length; i++) {
-  ages.push(2023 - years[i]);
-}
-console.log(ages);
-
-// contiues and break Statement
-
-for (let i = 0; i < abhiArray.length; i++) {
-  if (typeof abhiArray[i] !== "string") continue;
-
-  console.log(abhiArray[i], typeof abhiArray[i]);
-  //Filling types Array
-  // types[i] = typeof abhiArray[i];
-  // types.push(typeof abhiArray[i]);
-}
-
-//break
-console.log("-BREAK With NUMBER");
-for (let i = 0; i < abhiArray.length; i++) {
-  if (typeof abhiArray[i] === "number") break;
-
-  console.log(abhiArray[i], typeof abhiArray[i]);
+for (let excersie = 1; excersie < 4; excersie++) {
+  console.log(`-------Starting exercise ${excersie}`);
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`Lifthing weight repetition ${rep}`);
+  }
 }
