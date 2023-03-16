@@ -1,5 +1,5 @@
 // Remember, we're gonna use strict mode in all scripts now!
-'use strict';
+"use strict";
 
 /*
 ///////////////////////////////////////
@@ -159,4 +159,4 @@ const printForecast = function (arr) {
 printForecast(data1);
 */
 
-const namenew = 'Abhihsk';
+const namenew = "Abhihsk";
