@@ -51,6 +51,29 @@ console.log(tempAmplitude);
 
 // 2) Breaking up into sub-problems
 // - Merge 2 arrays
+const calcTempAmplitubeNew = function (temp1, temp2) {
+  const temps = temp1.concat(temp2);
+  let max = temps[0];
+  let min = temps[0];
+  for (let i = 1; i < temps.length; i++) {
+    const currtemp = temps[i];
+    // console.log(currtemp);
+    if (typeof currtemp !== 'number') {
+      continue;
+    }
+    if (currtemp > max) {
+      max = currtemp;
+    }
+    if (currtemp < min) {
+      min = currtemp;
+    }
+  }
+  console.log(max);
+  console.log(min);
+  return max - min;
+};
+const tempAmplitudenew = calcTempAmplitubeNew([3, 5, 1], [9, 0, 5]);
+console.log(tempAmplitudenew);
 
 // ///////////////////////////////////////
 // // Debugging with the Console and Breakpoints
