@@ -3,10 +3,10 @@
 // let hasDriversLicense = false;
 // const passTest = true;
 
-// // let interface = "HEllo";
-// // console.log(interface);
+// // // let interface = "HEllo";
+// // // console.log(interface);
 // if (passTest) {
-//   hasDriversLicense = true;
+//   hasDriverLicense = true;
 // }
 // if (hasDriversLicense) {
 //   console.log("i can drive");
@@ -409,12 +409,12 @@
 //   count++;
 // }
 
-let dice = Math.trunc(Math.random() * 6) + 1;
-// console.log(dice);
+// let dice = Math.trunc(Math.random() * 6) + 1;
+// // console.log(dice);
 
-while (dice !== 6) {
-  console.log(`You rooled a ${dice}`);
-  dice = Math.trunc(Math.random() * 6) + 1;
-  console.log(dice);
-  if (dice === 6) console.log("Loop is about to end");
-}
+// while (dice !== 6) {
+//   console.log(`You rooled a ${dice}`);
+//   dice = Math.trunc(Math.random() * 6) + 1;
+//   console.log(dice);
+//   if (dice === 6) console.log("Loop is about to end");
+// }
