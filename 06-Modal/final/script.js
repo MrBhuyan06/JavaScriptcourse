@@ -30,3 +30,13 @@ for (let i = 0; i < btnsOpenmodel.length; i++) {
 btncloseModal.addEventListener('click', closeModel);
 
 overlay.addEventListener('click', closeModel);
+
+// How to Handle keypress event(Global event)
+
+document.addEventListener('keydown', function (e) {
+  console.log(e);
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModel();
+  }
+  console.log(' A Key was Press');
+});
