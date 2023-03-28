@@ -60,15 +60,29 @@ const year = 2000;
 //function
 
 console.log(addDel(2, 3));
-console.log(addE(2, 3));
-console.log(addDel(2, 3));
+console.log(addExpr(2, 3));
+console.log(addArrow(2, 3));
 
 function addDel(a, b) {
   return a + b;
 }
 
-const addExpr = function (a, b) {
+// const addExpr = function (a, b) {
+//   return a + b;
+// };
+
+// const addArrow = () => a + b;
+
+// Lets change the const to var and see the magic
+// Now If we want to use before declaring it
+console.log(addExpr(2, 3));
+//Oops Get a error as script.js:63 Uncaught TypeError: addExpr is not a function
+// just log(addExpr) you will get undefine and in undefine we are  doing undefine(2, 3)
+// console.log(addExpr);
+console.log(addArrow(2, 3));
+
+var addExpr = function (a, b) {
   return a + b;
 };
 
-const addArrow = () => a + b;
+var addArrow = () => a + bvar;
