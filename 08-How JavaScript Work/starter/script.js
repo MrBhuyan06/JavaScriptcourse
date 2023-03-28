@@ -19,12 +19,15 @@
 function calAge(birthYear) {
   const age = 2023 - birthYear;
   function printAge() {
-    const outPut = ` ${firstName}You are ${age}, born in ${birthYear}`;
+    let outPut = ` ${firstName}You are ${age}, born in ${birthYear}`;
     console.log(outPut);
 
     if (birthYear >= 1981 && birthYear <= 1996) {
       var millenial = true;
+      //Creating New Variable as a same name as outer Scope's variable
       const firstName = 'Bhuyan';
+      //Reassing Outer Scope's Variable
+      outPut = 'New Output';
       const str = `oh, and you are a millenial,${firstName}`;
       console.log(str);
       function add(a, b) {
@@ -34,6 +37,7 @@ function calAge(birthYear) {
 
     // console.log(str);
     console.log(millenial);
+    console.log(outPut);
     // console.log(add(2, 3)); //function are called block level  scope in strict mode
   }
   printAge();
@@ -43,3 +47,28 @@ function calAge(birthYear) {
 //global Variable
 const firstName = 'Abhi';
 calAge(1991);
+
+//Hoisting
+console.log(me);
+// console.log(job);
+// console.log(year);
+
+var me = 'Abhi';
+let job = 'Student';
+const year = 2000;
+
+//function
+
+console.log(addDel(2, 3));
+console.log(addE(2, 3));
+console.log(addDel(2, 3));
+
+function addDel(a, b) {
+  return a + b;
+}
+
+const addExpr = function (a, b) {
+  return a + b;
+};
+
+const addArrow = () => a + b;
