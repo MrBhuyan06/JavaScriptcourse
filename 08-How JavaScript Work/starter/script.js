@@ -89,19 +89,54 @@
 
 // Example
 
-if (!numProduct) {
-  deleteShoppingChart();
-}
+// if (!numProduct) {
+//   deleteShoppingChart();
+// }
 
-var numProduct = 10;
-function deleteShoppingChart() {
-  console.log('All Prodcut is deleted');
-}
+// var numProduct = 10;
+// function deleteShoppingChart() {
+//   console.log('All Prodcut is deleted');
+// }
 
 // Varibale create in with var will create a properties in global window object
-var x = 1;
-let y = 2;
-const g = 3;
-console.log(x === window.x);
-console.log(y === window.y);
-console.log(g === window.g);
+// var x = 1;
+// let y = 2;
+// const g = 3;
+// console.log(x === window.x);
+// console.log(y === window.y);
+// console.log(g === window.g);
+
+// This key Word Exmaple
+//outSide any function or in global object
+// console.log(this);
+// const calcAge = function (birthYear) {
+//   console.log(2023 - birthYear);
+//   console.log(this);
+// };
+// const calcAgeArrow = birthYear => {
+//   console.log(2023 - birthYear);
+//   //Hexical to its parent so parent is globaal Scope
+//   console.log(this);
+// };
+// // 2-Regural Function Call
+// calcAge(1992);
+// //Arrow Function Call
+// calcAgeArrow(1992);
+
+const abhi = {
+  year: 1991,
+  calAge: function () {
+    console.log(this);
+    console.log(2023 - this.year);
+  },
+};
+
+abhi.calAge();
+
+const smriti = {
+  year: 2017,
+};
+//Method browiing
+smriti.calAge = abhi.calAge;
+
+smriti.calAge();
