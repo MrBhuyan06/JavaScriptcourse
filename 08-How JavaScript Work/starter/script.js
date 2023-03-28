@@ -123,20 +123,23 @@
 // //Arrow Function Call
 // calcAgeArrow(1992);
 
-const abhi = {
-  year: 1991,
-  calAge: function () {
-    console.log(this);
-    console.log(2023 - this.year);
-  },
-};
+// const abhi = {
+//   year: 1991,
+//   calAge: function () {
+//     console.log(this);
+//     console.log(2023 - this.year);
+//   },
+// };
 
-abhi.calAge();
+// abhi.calAge();
 
-const smriti = {
-  year: 2017,
-};
-//Method browiing
-smriti.calAge = abhi.calAge;
+// const smriti = {
+//   year: 2017,
+// };
+// //Method browiing
+// smriti.calAge = abhi.calAge;
 
-smriti.calAge();
+// smriti.calAge();
+
+// const f = abhi.calAge;
+// f();
