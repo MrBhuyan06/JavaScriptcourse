@@ -97,3 +97,11 @@ var numProduct = 10;
 function deleteShoppingChart() {
   console.log('All Prodcut is deleted');
 }
+
+// Varibale create in with var will create a properties in global window object
+var x = 1;
+let y = 2;
+const g = 3;
+console.log(x === window.x);
+console.log(y === window.y);
+console.log(g === window.g);
