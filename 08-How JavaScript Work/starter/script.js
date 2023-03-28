@@ -15,3 +15,31 @@
 //   var fullname = 'Abhihshek';
 // }
 // console.log(fullname);
+
+function calAge(birthYear) {
+  const age = 2023 - birthYear;
+  function printAge() {
+    const outPut = ` ${firstName}You are ${age}, born in ${birthYear}`;
+    console.log(outPut);
+
+    if (birthYear >= 1981 && birthYear <= 1996) {
+      var millenial = true;
+      const firstName = 'Bhuyan';
+      const str = `oh, and you are a millenial,${firstName}`;
+      console.log(str);
+      function add(a, b) {
+        return a + b;
+      }
+    }
+
+    // console.log(str);
+    console.log(millenial);
+    // console.log(add(2, 3)); //function are called block level  scope in strict mode
+  }
+  printAge();
+  return age;
+}
+
+//global Variable
+const firstName = 'Abhi';
+calAge(1991);
