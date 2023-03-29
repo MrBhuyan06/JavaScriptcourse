@@ -203,3 +203,62 @@
 //   return a + b;
 // };
 // addArrow(2, 5, 8);
+
+//How primitive and object is store
+
+// let age = 23;
+// let oldage = age;
+// age = 31;
+// console.log(age);
+// console.log(oldage);
+
+// const me = {
+//   name: 'Abhi',
+//   age: 30,
+// };
+
+// const friend = me;
+// friend.age = 27;
+
+// console.log('Friend', friend);
+// console.log('Me', me);
+
+//primitive type
+// let lastname = 'Bhuyan';
+// let OldLastName = lastname;
+// lastname = 'Pradhan';
+
+// //Because is primitive value is being save it own memmory address in stack
+// console.log(lastname, OldLastName);
+
+// const smriti = {
+//   firstName: 'smriti',
+//   lastName: 'Pradhan',
+//   age: 27,
+// };
+
+// const marriedSmriti = smriti; // copy the reference
+
+// marriedSmriti.lastName = 'Bhuyan';
+// // console.log('Before Marriage', smriti);
+// // console.log('After Marriage', marriedSmriti);
+
+// //marriedSmriti = {};
+
+// const smriti2 = {
+//   firstName: 'smriti',
+//   lastName: 'Pradhan',
+//   age: 27,
+//   family: ['MoM', 'DAD'],
+// };
+// const smritiCopy = Object.assign({}, smriti2); // only create the sallo copy not deep copy
+// smritiCopy.lastName = 'Bhuyan';
+
+// console.log('Before Marriage', smriti2);
+// console.log('After Marriage', smritiCopy);
+
+// smritiCopy.family.push('Abhishek');
+// smritiCopy.family.push('Abhishek Family');
+
+// console.log('Before Marriage', smriti2);
+// console.log('After Marriage', smritiCopy);
