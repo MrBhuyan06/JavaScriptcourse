@@ -143,3 +143,63 @@
 
 // const f = abhi.calAge;
 // f();
+
+// Arrow Function And regular function
+
+// abhi.firstName;
+// abhi.lastName;
+// bhuyan;
+// console.log(bhuyan);
+
+// var firstName = 'Abhishek ';
+// const abhi = {
+//   firstName: 'Abhishek',
+//   year: 1991,
+//   calAge: function () {
+//     console.log(this);
+//     console.log(2023 - this.year);
+// solution 1
+// const self = this; // self or that
+// const isMillenial = function () {
+//   console.log(this); // undefine even through it is inside the function
+//   // inside any regular function this is a undefine
+//   // solution self variable or arrow function
+//   //   console.log(this.year >= 1981 && this.year <= 1996);
+//   console.log(self.year >= 1981 && self.year <= 1996);
+// };
+// solution 2
+//     const isMillenial = () => {
+//       console.log(this);
+//       console.log(self.year >= 1981 && self.year <= 1996);
+//     };
+
+//     isMillenial();
+//   },
+//   greet: () => {
+//     console.log(this);
+//     console.log(`Hey ${this.firstName}`);
+//   },
+//   greet: function () {
+//     console.log(this);
+//     console.log(`Hey ${this.firstName}`);
+//   },
+// };
+// abhi.greet();
+//when we tring to access the properties from an obj which is not present give you undefine
+// console.log(this.firstName);
+// abhi.calAge();
+
+//Arugemnt keyword
+
+// const addExprs = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addExprs(2, 5);
+// addExprs(2, 5, 6, 7, 8);
+
+// var addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addArrow(2, 5, 8);
