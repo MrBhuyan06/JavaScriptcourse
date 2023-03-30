@@ -15,6 +15,17 @@ const restaurant = {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `Order received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivery to ${address} at ${time} `
+    );
+  },
+
   openingHours: {
     thu: {
       open: 12,
@@ -31,45 +42,90 @@ const restaurant = {
   },
 };
 
-const arr = [2, 3, 4];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
-//Destructing assigment
+restaurant.orderDelivery({
+  time: '23:30',
+  address: 'BBSR',
+  mainIndex: 2,
+  starterIndex: 2,
+});
 
-const [x, y, z] = arr;
-console.log(x, y, z);
-console.log(arr); //original array is not affected
+//default value
+restaurant.orderDelivery({
+  address: 'BBSR',
 
-// const [first,  second] = restaurant.categories;
-// // console.log(first, second);
-// // 1,and 3 one
-// const [first, , second] = restaurant.categories;
-let [main, , secondary] = restaurant.categories;
-console.log(main, secondary);
+  starterIndex: 1,
+});
 
-// Switch Variables
-//with general swap method
-// const temp = main;
-// main = secondary;
-// secondary = temp;
+// Destructing an object
+// {} is used to destructing object
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+//new name to give an prop
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hours, tags);
+
+const { menu = [], starterMenu: starter = [] } = restaurant;
+console.log(menu, starter);
+
+//mutating variable;
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+// { } js treated as a code block and give a exror as unexpected token
+({ a, b } = obj);
+console.log(a, b);
+
+//nested destructing in obj
+const {
+  fri: { open, close },
+} = openingHours;
+console.log(open, close);
+
+// const arr = [2, 3, 4];
+// const a = arr[0];
+// const b = arr[1];
+// const c = arr[2];
+// //Destructing assigment
+
+// const [x, y, z] = arr;
+// console.log(x, y, z);
+// console.log(arr); //original array is not affected
+
+// // const [first,  second] = restaurant.categories;
+// // // console.log(first, second);
+// // // 1,and 3 one
+// // const [first, , second] = restaurant.categories;
+// let [main, , secondary] = restaurant.categories;
 // console.log(main, secondary);
 
-//swap using destruciong
-[secondary, main] = [main, secondary];
-console.log(main, secondary);
+// // Switch Variables
+// //with general swap method
+// // const temp = main;
+// // main = secondary;
+// // secondary = temp;
+// // console.log(main, secondary);
 
-const [starter, maincourse] = restaurant.order(2, 0);
-console.log(starter, maincourse);
+// //swap using destruciong
+// [secondary, main] = [main, secondary];
+// console.log(main, secondary);
 
-//nested destruning array
-const nested = [2, 4, [5, 6]];
-// console.log(nested[2][0]);
-// const [i, , j] = nested;
-// console.log(i, j);
-const [i, , [j, k]] = nested;
-console.log(i, j, k);
+// const [starter, maincourse] = restaurant.order(2, 0);
+// console.log(starter, maincourse);
 
-// Deafult value to variable
-const [p = 0, q = 0, r = 0] = [8, 9];
-console.log(p, q, r);
+// //nested destruning array
+// const nested = [2, 4, [5, 6]];
+// // console.log(nested[2][0]);
+// // const [i, , j] = nested;
+// // console.log(i, j);
+// const [i, , [j, k]] = nested;
+// console.log(i, j, k);
+
+// // Deafult value to variable
+// const [p = 0, q = 0, r = 0] = [8, 9];
+// console.log(p, q, r);
