@@ -40,6 +40,11 @@ const restaurant = {
       close: 24,
     },
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `HEre is your Declicious pasta with ${ing1}, ${ing2}, ${ing3})}`
+    );
+  },
 };
 
 restaurant.orderDelivery({
@@ -129,3 +134,55 @@ console.log(open, close);
 // // Deafult value to variable
 // const [p = 0, q = 0, r = 0] = [8, 9];
 // console.log(p, q, r);
+
+//spred operator
+
+const arr = [7, 8, 9];
+
+const badNewArry = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArry);
+
+const newGoodArr = [1, 2, ...arr];
+console.log(newGoodArr);
+
+console.log(...newGoodArr);
+
+//new mwnu
+const newMenu = [...restaurant.mainMenu, 'Chicken tikka'];
+console.log(newMenu);
+
+//copy array
+//salo copy
+const mainMenuCopy = [...restaurant.mainMenu];
+//join 2 array
+const wholeMenu = [...mainMenuCopy, ...restaurant.starterMenu];
+console.log(wholeMenu);
+
+//spread operater applay in all iterable not object
+//iterable:array, String, maps, sets, Not objects
+
+const str = 'Abhihsek';
+const letters = [...str, ' ', 's. '];
+console.log(letters);
+console.log(...str);
+
+// const ingredients = [
+//   prompt("Let's make pasta"),
+//   prompt('ingredients'),
+//   prompt('ingredients'),
+// ];
+// console.log(ingredients);
+
+// restaurant.orderPasta(ingredients[0],ingredients[1],ingredients[2])
+// restaurant.orderPasta(...ingredients);
+
+//since 2018spread opr is also work in object
+
+const newRestaurant = { founingYear: 2019, ...restaurant, founder: 'Abhisek' };
+console.log(newRestaurant);
+
+//salo copy
+const restaurantcopy = { ...restaurant };
+restaurantcopy.name = 'Go Foodtion ';
+console.log(restaurantcopy);
+console.log(restaurant);
