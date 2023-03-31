@@ -45,52 +45,62 @@ const restaurant = {
       `HEre is your Declicious pasta with ${ing1}, ${ing2}, ${ing3})}`
     );
   },
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    if (otherIngredients.length == 0) {
+      console.log(
+        `oops sorry We cant processed with your other as u have not given otherIngredients details`
+      );
+    } else {
+      console.log(`Thank you odering from us Your pizza is on the way`);
+    }
+  },
 };
 
-restaurant.orderDelivery({
-  time: '23:30',
-  address: 'BBSR',
-  mainIndex: 2,
-  starterIndex: 2,
-});
+// restaurant.orderDelivery({
+//   time: '23:30',
+//   address: 'BBSR',
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
 
-//default value
-restaurant.orderDelivery({
-  address: 'BBSR',
+// //default value
+// restaurant.orderDelivery({
+//   address: 'BBSR',
 
-  starterIndex: 1,
-});
+//   starterIndex: 1,
+// });
 
-// Destructing an object
-// {} is used to destructing object
+// // Destructing an object
+// // {} is used to destructing object
 
-const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
+// const { name, openingHours, categories } = restaurant;
+// console.log(name, openingHours, categories);
 
-//new name to give an prop
-const {
-  name: restaurantName,
-  openingHours: hours,
-  categories: tags,
-} = restaurant;
-console.log(restaurantName, hours, tags);
+// //new name to give an prop
+// const {
+//   name: restaurantName,
+//   openingHours: hours,
+//   categories: tags,
+// } = restaurant;
+// console.log(restaurantName, hours, tags);
 
-const { menu = [], starterMenu: starter = [] } = restaurant;
-console.log(menu, starter);
+// const { menu = [], starterMenu: starter = [] } = restaurant;
+// console.log(menu, starter);
 
-//mutating variable;
-let a = 111;
-let b = 999;
-const obj = { a: 23, b: 7, c: 14 };
-// { } js treated as a code block and give a exror as unexpected token
-({ a, b } = obj);
-console.log(a, b);
+// //mutating variable;
+// let a = 111;
+// let b = 999;
+// const obj = { a: 23, b: 7, c: 14 };
+// // { } js treated as a code block and give a exror as unexpected token
+// ({ a, b } = obj);
+// console.log(a, b);
 
-//nested destructing in obj
-const {
-  fri: { open, close },
-} = openingHours;
-console.log(open, close);
+// //nested destructing in obj
+// const {
+//   fri: { open, close },
+// } = openingHours;
+// console.log(open, close);
 
 // const arr = [2, 3, 4];
 // const a = arr[0];
@@ -137,52 +147,189 @@ console.log(open, close);
 
 //spred operator
 
-const arr = [7, 8, 9];
+// const arr = [7, 8, 9];
 
-const badNewArry = [1, 2, arr[0], arr[1], arr[2]];
-console.log(badNewArry);
+// const badNewArry = [1, 2, arr[0], arr[1], arr[2]];
+// console.log(badNewArry);
 
-const newGoodArr = [1, 2, ...arr];
-console.log(newGoodArr);
+// const newGoodArr = [1, 2, ...arr];
+// console.log(newGoodArr);
 
-console.log(...newGoodArr);
+// console.log(...newGoodArr);
 
-//new mwnu
-const newMenu = [...restaurant.mainMenu, 'Chicken tikka'];
-console.log(newMenu);
+// //new mwnu
+// const newMenu = [...restaurant.mainMenu, 'Chicken tikka'];
+// console.log(newMenu);
 
-//copy array
-//salo copy
-const mainMenuCopy = [...restaurant.mainMenu];
-//join 2 array
-const wholeMenu = [...mainMenuCopy, ...restaurant.starterMenu];
-console.log(wholeMenu);
+// //copy array
+// //salo copy
+// const mainMenuCopy = [...restaurant.mainMenu];
+// //join 2 array
+// const wholeMenu = [...mainMenuCopy, ...restaurant.starterMenu];
+// console.log(wholeMenu);
 
-//spread operater applay in all iterable not object
-//iterable:array, String, maps, sets, Not objects
+// //spread operater applay in all iterable not object
+// //iterable:array, String, maps, sets, Not objects
 
-const str = 'Abhihsek';
-const letters = [...str, ' ', 's. '];
-console.log(letters);
-console.log(...str);
+// const str = 'Abhihsek';
+// const letters = [...str, ' ', 's. '];
+// console.log(letters);
+// console.log(...str);
 
-// const ingredients = [
-//   prompt("Let's make pasta"),
-//   prompt('ingredients'),
-//   prompt('ingredients'),
+// // const ingredients = [
+// //   prompt("Let's make pasta"),
+// //   prompt('ingredients'),
+// //   prompt('ingredients'),
+// // ];
+// // console.log(ingredients);
+
+// // restaurant.orderPasta(ingredients[0],ingredients[1],ingredients[2])
+// // restaurant.orderPasta(...ingredients);
+
+// //since 2018spread opr is also work in object
+
+// const newRestaurant = { founingYear: 2019, ...restaurant, founder: 'Abhisek' };
+// console.log(newRestaurant);
+
+// //salo copy
+// const restaurantcopy = { ...restaurant };
+// restaurantcopy.name = 'Go Foodtion ';
+// console.log(restaurantcopy);
+// console.log(restaurant);
+
+// //Rest Operater
+// //rest pattern look like spread opr ...rest
+// //rest parameter
+
+//spred , beacuse on RIGTH side of =
+const arrray = [1, 2, 3, ...[4, 5, 6]];
+//REST, BEacuse on left side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , Risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, Risotto, otherFood);
+
+//Objects
+const { sat, ...weekdays } = { ...restaurant.openingHours };
+console.log({ ...restaurant.openingHours });
+console.log(weekdays);
+console.log(sat);
+
+const add = function (...numbers) {
+  // console.log(numbers);
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+add(2, 3); // arbitary amount of argument we dont know
+add(5, 6, 7);
+add(5, 6, 7, 5, 7);
+// add({ number: 1, number: 3, number: 5 });
+
+//spread with argument and rest in parameter
+const x = [23, 5, 7];
+add(...x);
+
+restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinch');
+restaurant.orderPizza('mushrooms');
+
+// const resto = {
+//   name: 'go',
+//   id: 'igngeg',
+// };
+// const { name } = resto;
+// console.log(name);
+
+// const prop = {
+//   res: {
+//     data: {
+//       name: 'jo',
+//       id: 'someThink',
+//     },
+//   },
+//   hello: 'world',
+// };
+
+// const { res, hello } = prop;
+// console.log(res);
+
+// const profileData = [
+//   {
+//     type: profile,
+//     data: {
+//       name: 'Abhishek',
+//       age: 22,
+//       img: 'https://www.linkedin.com/in/smriti-pradhan-926273185/overlay/photo/',
+//     },
+//   },
+//   {
+//     type: profile,
+//     data: {
+//       name: 'Abhishek',
+//       age: 23,
+//       img: 'https://media.licdn.com/dms/image/D5603AQH8t5zWTRKb-Q/profile-displayphoto-shrink_400_400/0/1663474153122?e=1685577600&v=beta&t=Vo_9ODvSlpGoW1TeVavv7OXRA_SNrHiemWKaKgfmTT0',
+//     },
+//   },
+//   {
+//     type: profile,
+//     data: {
+//       name: 'Hitesh Sir',
+//       age: 30,
+//       img: 'https://media.licdn.com/dms/image/D5603AQH8t5zWTRKb-Q/profile-displayphoto-shrink_400_400/0/1663474153122?e=1685577600&v=beta&t=Vo_9ODvSlpGoW1TeVavv7OXRA_SNrHiemWKaKgfmTT0',
+//     },
+//   },
+//   {
+//     type: profile,
+//     data: {
+//       name: 'Anurag Sir',
+//       age: 30,
+//       img: 'https://media.licdn.com/dms/image/D5603AQFelednnKJlJg/profile-displayphoto-shrink_400_400/0/1667584272134?e=1685577600&v=beta&t=TaE8KMehbz720oKe58M1FukBUYfjy_FojZZoos0yu6I',
+//     },
+//   },
+//   {
+//     type: profile,
+//     data: {
+//       name: 'Jonas Sir',
+//       age: 30,
+//       img: 'https://avatars.githubusercontent.com/u/18718850?v=4',
+//     },
+//   },
 // ];
-// console.log(ingredients);
+// console.log(profileData[0].data.name);
 
-// restaurant.orderPasta(ingredients[0],ingredients[1],ingredients[2])
-// restaurant.orderPasta(...ingredients);
+//three properties of logical operater use any datatype and return any datatype
+// short-circuiting
 
-//since 2018spread opr is also work in object
+console.log(3 || 'Abhi');
+console.log('' || 'Abhi'); //Abhi
+console.log(true || 0); //true
+console.log(undefined || null); // null
+console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 
-const newRestaurant = { founingYear: 2019, ...restaurant, founder: 'Abhisek' };
-console.log(newRestaurant);
-
-//salo copy
-const restaurantcopy = { ...restaurant };
-restaurantcopy.name = 'Go Foodtion ';
-console.log(restaurantcopy);
+restaurant.numGuests = 23;
 console.log(restaurant);
+const guest1 = restaurant.numGuests ?? 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+//&& operater short circuits
+console.log('____AND__');
+console.log(0 && 'Abhi');
+console.log(7 && 'Abhi');
+console.log('Hello' && 23 && null && 'Abhishek');
+
+//Practical
+if (restaurant.orderPizza) {
+  restaurant.orderDelivery('mushrooms', 'spinach');
+}
+
+restaurant.orderPasta && restaurant.orderPizza();
