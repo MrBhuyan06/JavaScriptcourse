@@ -313,13 +313,19 @@ console.log(true || 0); //true
 console.log(undefined || null); // null
 console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 
-restaurant.numGuests = 23;
-console.log(restaurant);
-const guest1 = restaurant.numGuests ?? 10;
-console.log(guest1);
+restaurant.numGuests = 0;
+// console.log(restaurant);
+//nullish coasing operater in 2020
 
-const guest2 = restaurant.numGuests || 10;
-console.log(guest2);
+const guest1 = restaurant.numGuests || 10;
+console.log('guest1', guest1);
+
+//Nullish=null and undefine (only called as fasle and 0 not been called as false )
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log('guestCorrect', guestCorrect);
+
+// const guest2 = restaurant.numGuests || 10;
+// console.log(guest2);
 
 //&& operater short circuits
 console.log('____AND__');
