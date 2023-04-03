@@ -92,3 +92,46 @@ printGoal(...allplayer);
 
 console.log(team1 < team2 && console.log("Team1 is won the match"));
 console.log(team1 > team2 && console.log("Team2 is won the match"));
+
+//Coding challenge 2
+//1
+// for (const player of game.scored) {
+//   console.log(player);
+// }
+for (const [index, player] of game.scored.entries()) {
+  console.log(`Player Number ${index}, Player Name ${player}`);
+}
+
+//2
+let avg = 0;
+for (odd of Object.values(game.odds)) {
+  // console.log(odd);
+
+  avg += odd;
+}
+console.log(Math.trunc(avg / Object.values(game.odds).length));
+
+//3
+// for (odd of Object.values(game.odds)) {
+//   console.log(`Odd of victory ${game.team1} victory : ${odd}`);
+//   console.log(`Odd of draw  : ${odd}`);
+//   console.log(`Odd of victory  ${game.team2} victory : ${odd}`);
+// }
+
+for (const [teamm, odd] of Object.entries(game.odds)) {
+  const str = teamm === "x" ? "draw" : `odd of victory${teamm}`;
+  console.log(`Odd ${str} : ${odd}`);
+}
+
+// const scores = {
+//   Gnarby: 1,
+//   Hummels: 1,
+//   Lewandowski: 2,
+// };
+const scoress = {};
+
+for (const player of game.scored) {
+  // console.log(player);
+  scoress[player] ? scoress[player]++ : (scoress[player] = 1);
+}
+console.log(scoress);

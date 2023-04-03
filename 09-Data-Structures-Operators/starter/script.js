@@ -383,3 +383,4 @@ for (const [index, ele] of menu.entries()) {
 }
 console.log([...menu.entries()]);
 // menu.entries basically made each element an array which contain index and value of that element
+// Enhanching oject literals
