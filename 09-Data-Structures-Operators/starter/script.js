@@ -57,19 +57,19 @@ const restaurant = {
   },
 };
 
-// restaurant.orderDelivery({
-//   time: '23:30',
-//   address: 'BBSR',
-//   mainIndex: 2,
-//   starterIndex: 2,
-// });
+restaurant.orderDelivery({
+  time: '23:30',
+  address: 'BBSR',
+  mainIndex: 2,
+  starterIndex: 2,
+});
 
-// //default value
-// restaurant.orderDelivery({
-//   address: 'BBSR',
+//default value
+restaurant.orderDelivery({
+  address: 'BBSR',
 
-//   starterIndex: 1,
-// });
+  starterIndex: 1,
+});
 
 // // Destructing an object
 // // {} is used to destructing object
@@ -383,4 +383,85 @@ for (const [index, ele] of menu.entries()) {
 }
 console.log([...menu.entries()]);
 // menu.entries basically made each element an array which contain index and value of that element
-// Enhanching oject literals
+// Enhanching oject literal
+// const  openingHours= {
+//   thu: {
+//     open: 12,
+//     close: 22,
+//   },
+//   fri: {
+//     open: 11,
+//     close: 23,
+//   },
+//   sat: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// },
+
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+//   order: function (starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+//   openingHours: openingHours, // It may confusing in some case of the object enching is that if both the properties name is same then we can only write openingHours
+//   openingHours,
+//   orderDelivery: function ({
+//     starterIndex = 1,
+//     mainIndex = 0,
+//     time = '20:00',
+//     address,
+//   }) {
+//     console.log(
+//       `Order received ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivery to ${address} at ${time} `
+//     );
+//   },
+
+//   orderPasta: function (ing1, ing2, ing3) {
+//     console.log(
+//       `HEre is your Declicious pasta with ${ing1}, ${ing2}, ${ing3})}`
+//     );
+//   },
+//   orderPizza: function (mainIngredient, ...otherIngredients) {
+//     console.log(mainIngredient);
+//     if (otherIngredients.length == 0) {
+//       console.log(
+//         `oops sorry We cant processed with your other as u have not given otherIngredients details`
+//       );
+//     } else {
+//       console.log(`Thank you odering from us Your pizza is on the way`);
+//     }
+//   },
+// };
+
+const weekdays = { 1: 'mon', 2: 'tue', 3: 'wed' };
+const openingHours = {
+  [weekdays[2]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[1]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[0]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+console.log(openingHours);
+
+const abcd = {
+  a: abhi,
+  print({ name = 0, age = 12, adress = 'udk' }) {
+    console.log(name, age, adress);
+  },
+};
+abcd.print({
+  adress: bbsr,
+});
