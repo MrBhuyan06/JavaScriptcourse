@@ -438,30 +438,116 @@ console.log([...menu.entries()]);
 //   },
 // };
 
-const weekdays = { 1: 'mon', 2: 'tue', 3: 'wed' };
+// const weekdays = { 1: 'mon', 2: 'tue', 3: 'wed' };
+// const openingHours = {
+//   [weekdays[2]]: {
+//     open: 12,
+//     close: 22,
+//   },
+//   [weekdays[1]]: {
+//     open: 11,
+//     close: 23,
+//   },
+//   [weekdays[0]]: {
+//     open: 0, // Open 24 hours
+//     close: 24,
+//   },
+// };
+
+// console.log(openingHours);
+
+// const abcd = {
+//   a: abhi,
+//   print({ name = 0, age = 12, adress = 'udk' }) {
+//     console.log(name, age, adress);
+//   },
+// };
+// abcd.print({
+//   adress: bbsr,
+// });
+const carData = [
+  {
+    type: '4 wheeler',
+    data: {
+      name: 'BMW',
+      color: 'red',
+      model: {
+        modeltype: 0,
+      },
+    },
+  },
+  {
+    type: '4 wheeler',
+    data: {
+      name: 'ferari',
+      color: 'red',
+    },
+  },
+  {
+    type: '4 wheeler',
+    data: {
+      name: 'mercedes',
+      color: 'red',
+    },
+  },
+];
+// With out using optional chaning
+// cant read the properties of an undefine
+console.log(carData[0].data.model);
+// using scope chaning
+//As we have use the scope chaining is return as soon it encounter nullish values
+console.log(carData[0].data.model?.modeltype);
+// but without returning Nullish values if we want to return some string 'model is not found so we can use short circuting here
+// with nullish coching operater
+console.log(carData[1].data.model?.modeltype || 'model is not found');
+// if it has model and modelhas model type as 0 then as we have using short circting thn 0 is consider as a faslely value so we can use nullish operate hers
+console.log(carData[0].data.model?.modeltype ?? 'model is nullish');
+
+// const data = {
+//   dataelement: {
+//     name: 'abhihsk',
+//     age: 21,
+//     clg: 'mca',
+//     address: 'bbsr',
+//     ph: 989899,
+//     hasvichel: true,
+//   },
+// };
+
+// function print(...obj) {
+//   console.log(obj[0].name);
+//   console.log('hello');
+//   // console.log(age);
+// }
+
+// const arr = [1, 2, 3, 4, [2, 3, 4]];
+// console.log([...arr[4]]);
+// console.log({ ...data.dataelement });
+// print({ ...data.dataelement });
+
+// const arr = [1, 2, 4, [2, 4, [3, 5]]];
+// console.log(arr[3][3]);
+
 const openingHours = {
-  [weekdays[2]]: {
+  thu: {
     open: 12,
     close: 22,
   },
-  [weekdays[1]]: {
+  fri: {
     open: 11,
     close: 23,
   },
-  [weekdays[0]]: {
+  sat: {
     open: 0, // Open 24 hours
     close: 24,
   },
 };
-
-console.log(openingHours);
-
-const abcd = {
-  a: abhi,
-  print({ name = 0, age = 12, adress = 'udk' }) {
-    console.log(name, age, adress);
-  },
-};
-abcd.print({
-  adress: bbsr,
-});
+for (let day of Object.keys(openingHours)) {
+  console.log(day);
+}
+for (let day of Object.values(openingHours)) {
+  console.log(day);
+}
+for (let [day, { open, close }] of Object.entries(openingHours)) {
+  console.log(`on ${day} we are open${open} and close ${close}`);
+}
