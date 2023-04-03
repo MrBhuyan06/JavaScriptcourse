@@ -320,7 +320,7 @@ restaurant.numGuests = 0;
 const guest1 = restaurant.numGuests || 10;
 console.log('guest1', guest1);
 
-//Nullish=null and undefine (only called as fasle and 0 not been called as false )
+//Nullish=null and undefine (only called as fasle )(and 0 and '' not been called as false )
 const guestCorrect = restaurant.numGuests ?? 10;
 console.log('guestCorrect', guestCorrect);
 
@@ -339,3 +339,32 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPasta && restaurant.orderPizza();
+
+//Logical operater 2021
+const rest1 = {
+  name: 'Abhi',
+  // numGuest: 20,
+  numGuest: 0,
+};
+
+const rest2 = {
+  name: 'Go Fooodtion',
+  owner: 'Abhihske bhuyan',
+};
+
+// rest1.numGuest = rest1.numGuest || 10;
+// rest2.numGuest = rest2.numGuest || 10;
+
+// or Assigment Operater
+rest1.numGuest ||= 10;
+rest2.numGuest ||= 10;
+
+rest1.owner = rest2.owner && <ANNOYMOUS>;
+rest2.owner = rest2.owner && <ANNOYMOUS>;
+
+console.log(rest1);
+console.log(rest2);
+
+//Nullish or Assigment Operater
+rest1.numGuest ??= 10;
+rest2.numGuest ??= 10;
