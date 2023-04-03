@@ -202,43 +202,43 @@ const restaurant = {
 // //rest parameter
 
 //spred , beacuse on RIGTH side of =
-const arrray = [1, 2, 3, ...[4, 5, 6]];
-//REST, BEacuse on left side of =
-const [a, b, ...others] = [1, 2, 3, 4, 5];
-console.log(a, b, others);
+// const arrray = [1, 2, 3, ...[4, 5, 6]];
+// //REST, BEacuse on left side of =
+// const [a, b, ...others] = [1, 2, 3, 4, 5];
+// console.log(a, b, others);
 
-const [pizza, , Risotto, ...otherFood] = [
-  ...restaurant.mainMenu,
-  ...restaurant.starterMenu,
-];
-console.log(pizza, Risotto, otherFood);
+// const [pizza, , Risotto, ...otherFood] = [
+//   ...restaurant.mainMenu,
+//   ...restaurant.starterMenu,
+// ];
+// console.log(pizza, Risotto, otherFood);
 
-//Objects
-const { sat, ...weekdays } = { ...restaurant.openingHours };
-console.log({ ...restaurant.openingHours });
-console.log(weekdays);
-console.log(sat);
+// //Objects
+// const { sat, ...weekdays } = { ...restaurant.openingHours };
+// console.log({ ...restaurant.openingHours });
+// console.log(weekdays);
+// console.log(sat);
 
-const add = function (...numbers) {
-  // console.log(numbers);
-  let sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum += numbers[i];
-  }
-  console.log(sum);
-};
+// const add = function (...numbers) {
+//   // console.log(numbers);
+//   let sum = 0;
+//   for (let i = 0; i < numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+// };
 
-add(2, 3); // arbitary amount of argument we dont know
-add(5, 6, 7);
-add(5, 6, 7, 5, 7);
-// add({ number: 1, number: 3, number: 5 });
+// add(2, 3); // arbitary amount of argument we dont know
+// add(5, 6, 7);
+// add(5, 6, 7, 5, 7);
+// // add({ number: 1, number: 3, number: 5 });
 
-//spread with argument and rest in parameter
-const x = [23, 5, 7];
-add(...x);
+// //spread with argument and rest in parameter
+// const x = [23, 5, 7];
+// add(...x);
 
-restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinch');
-restaurant.orderPizza('mushrooms');
+// restaurant.orderPizza('mushrooms', 'onion', 'olives', 'spinch');
+// restaurant.orderPizza('mushrooms');
 
 // const resto = {
 //   name: 'go',
@@ -307,64 +307,79 @@ restaurant.orderPizza('mushrooms');
 //three properties of logical operater use any datatype and return any datatype
 // short-circuiting
 
-console.log(3 || 'Abhi');
-console.log('' || 'Abhi'); //Abhi
-console.log(true || 0); //true
-console.log(undefined || null); // null
-console.log(undefined || 0 || '' || 'Hello' || 23 || null);
+// console.log(3 || 'Abhi');
+// console.log('' || 'Abhi'); //Abhi
+// console.log(true || 0); //true
+// console.log(undefined || null); // null
+// console.log(undefined || 0 || '' || 'Hello' || 23 || null);
 
-restaurant.numGuests = 0;
-// console.log(restaurant);
-//nullish coasing operater in 2020
+// restaurant.numGuests = 0;
+// // console.log(restaurant);
+// //nullish coasing operater in 2020
 
-const guest1 = restaurant.numGuests || 10;
-console.log('guest1', guest1);
+// const guest1 = restaurant.numGuests || 10;
+// console.log('guest1', guest1);
 
-//Nullish=null and undefine (only called as fasle )(and 0 and '' not been called as false )
-const guestCorrect = restaurant.numGuests ?? 10;
-console.log('guestCorrect', guestCorrect);
+// //Nullish=null and undefine (only called as fasle )(and 0 and '' not been called as false )
+// const guestCorrect = restaurant.numGuests ?? 10;
+// console.log('guestCorrect', guestCorrect);
 
-// const guest2 = restaurant.numGuests || 10;
-// console.log(guest2);
+// // const guest2 = restaurant.numGuests || 10;
+// // console.log(guest2);
 
-//&& operater short circuits
-console.log('____AND__');
-console.log(0 && 'Abhi');
-console.log(7 && 'Abhi');
-console.log('Hello' && 23 && null && 'Abhishek');
+// //&& operater short circuits
+// console.log('____AND__');
+// console.log(0 && 'Abhi');
+// console.log(7 && 'Abhi');
+// console.log('Hello' && 23 && null && 'Abhishek');
 
-//Practical
-if (restaurant.orderPizza) {
-  restaurant.orderDelivery('mushrooms', 'spinach');
+// //Practical
+// if (restaurant.orderPizza) {
+//   restaurant.orderDelivery('mushrooms', 'spinach');
+// }
+
+// restaurant.orderPasta && restaurant.orderPizza();
+
+// //Logical operater 2021
+// const rest1 = {
+//   name: 'Abhi',
+//   // numGuest: 20,
+//   numGuest: 0,
+// };
+
+// const rest2 = {
+//   name: 'Go Fooodtion',
+//   owner: 'Abhihske bhuyan',
+// };
+
+// // rest1.numGuest = rest1.numGuest || 10;
+// // rest2.numGuest = rest2.numGuest || 10;
+
+// // or Assigment Operater
+// rest1.numGuest ||= 10;
+// rest2.numGuest ||= 10;
+
+// rest1.owner = rest2.owner && <ANNOYMOUS>;
+// rest2.owner = rest2.owner && <ANNOYMOUS>;
+
+// console.log(rest1);
+// console.log(rest2);
+
+// //Nullish or Assigment Operater
+// rest1.numGuest ??= 10;
+// rest2.numGuest ??= 10;
+
+// Looping Array using The for of
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const items of menu) console.log(items);
+// items is belong to each elemnt of an array
+// continues and break is also used
+//current index not element but is originaly ment for element not index but it can be done
+for (const [index, ele] of menu.entries()) {
+  // console.log(index, ele);
+  console.log(`${index + 1}:${ele}`);
 }
-
-restaurant.orderPasta && restaurant.orderPizza();
-
-//Logical operater 2021
-const rest1 = {
-  name: 'Abhi',
-  // numGuest: 20,
-  numGuest: 0,
-};
-
-const rest2 = {
-  name: 'Go Fooodtion',
-  owner: 'Abhihske bhuyan',
-};
-
-// rest1.numGuest = rest1.numGuest || 10;
-// rest2.numGuest = rest2.numGuest || 10;
-
-// or Assigment Operater
-rest1.numGuest ||= 10;
-rest2.numGuest ||= 10;
-
-rest1.owner = rest2.owner && <ANNOYMOUS>;
-rest2.owner = rest2.owner && <ANNOYMOUS>;
-
-console.log(rest1);
-console.log(rest2);
-
-//Nullish or Assigment Operater
-rest1.numGuest ??= 10;
-rest2.numGuest ??= 10;
+console.log([...menu.entries()]);
+// menu.entries basically made each element an array which contain index and value of that element
