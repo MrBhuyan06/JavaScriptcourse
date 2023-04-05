@@ -1,5 +1,19 @@
 'use strict';
 
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri: {
+    open: 11,
+    close: 23,
+  },
+  sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -14,7 +28,7 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-
+  openingHours,
   orderDelivery: function ({
     starterIndex = 1,
     mainIndex = 0,
@@ -26,20 +40,6 @@ const restaurant = {
     );
   },
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
   orderPasta: function (ing1, ing2, ing3) {
     console.log(
       `HEre is your Declicious pasta with ${ing1}, ${ing2}, ${ing3})}`
@@ -56,20 +56,6 @@ const restaurant = {
     }
   },
 };
-
-restaurant.orderDelivery({
-  time: '23:30',
-  address: 'BBSR',
-  mainIndex: 2,
-  starterIndex: 2,
-});
-
-//default value
-restaurant.orderDelivery({
-  address: 'BBSR',
-
-  starterIndex: 1,
-});
 
 // // Destructing an object
 // // {} is used to destructing object
@@ -647,3 +633,49 @@ console.log(rest.get(arr));
 rest.set(document.querySelector('h1'), 'Heading');
 rest.set(true, true);
 console.log(rest);
+
+//Map iteration
+
+const question = new Map([
+  //i pos is key 2 pos is value
+  ['Qeation', 'What is the best programming language'],
+  [1, 'c'],
+  [2, 'java'],
+  [3, 'JavaScipt'],
+  ['correct', 3],
+  [true, 'Correct'],
+  [false, 'Try again '],
+]);
+console.log(question);
+
+// covert object to map
+console.log(Object.entries(openingHours));
+
+const openhour = new Map(Object.entries(openingHours));
+console.log(openhour);
+
+// As oject are iterable lets use it for of
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') {
+    console.log(`Answer ${key} : ${value}`);
+  }
+}
+// const Answer = Number(prompt('Your anser'));
+// console.log(Answer);
+const Answer = 3;
+// if (Answer === 3) {
+//   console.log(question.get(true));
+// } else {
+//   console.log(question.get(false));
+// }
+console.log(question.get(question.get('correct') === Answer));
+
+// convet map to array
+//build an new array and spreed it to map
+console.log([...question]);
+const newMapArray = [...question];
+console.log(newMapArray);
+console.log([...question.entries()]);
+console.log([...question.keys()]);
+console.log([...question.values()]);
