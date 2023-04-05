@@ -607,3 +607,43 @@ console.log(staffuniquePostion);
 
 // how many different in my name
 console.log(new Set('aabhi').size);
+
+// Map
+// is alomost usefull in map
+// obj(string as key only) vs map (key can be any type)
+const rest = new Map();
+rest.set('name', 'GoFoodtion');
+// console.log(rest);
+console.log(rest.set(1, 'BBSR'));
+rest
+  .set('categories', ['chickrn', 'mutton', 'southIndan'])
+  .set('open', 11) // Return Update mapp
+  .set('close', 12)
+  .set(true, 'We are open')
+  .set(false, 'we are close');
+console.log(rest);
+// Why does think happen because as it return the update map so we can use set in that updated map
+console.log(rest.get('name')); // as the time of getting the value the key datatpe is matter
+
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// has
+console.log(rest.has('name'));
+//delete an elements
+//based on key
+rest.delete(2);
+console.log(rest);
+console.log(rest.size);
+// console.log(rest.clear());
+console.log(rest);
+//array and obj as keyr
+const arr = [1, 2];
+rest.set(arr, 'test');
+console.log(rest);
+// how to get data from the array typ key
+console.log(rest.get(arr));
+
+rest.set(document.querySelector('h1'), 'Heading');
+rest.set(true, true);
+console.log(rest);
