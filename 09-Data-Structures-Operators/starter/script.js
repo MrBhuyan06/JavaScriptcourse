@@ -371,17 +371,17 @@ restaurant.orderDelivery({
 
 // Looping Array using The for of
 
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
-for (const items of menu) console.log(items);
-// items is belong to each elemnt of an array
-// continues and break is also used
-//current index not element but is originaly ment for element not index but it can be done
-for (const [index, ele] of menu.entries()) {
-  // console.log(index, ele);
-  console.log(`${index + 1}:${ele}`);
-}
-console.log([...menu.entries()]);
+// for (const items of menu) console.log(items);
+// // items is belong to each elemnt of an array
+// // continues and break is also used
+// //current index not element but is originaly ment for element not index but it can be done
+// for (const [index, ele] of menu.entries()) {
+//   // console.log(index, ele);
+//   console.log(`${index + 1}:${ele}`);
+// }
+// console.log([...menu.entries()]);
 // menu.entries basically made each element an array which contain index and value of that element
 // Enhanching oject literal
 // const  openingHours= {
@@ -465,89 +465,145 @@ console.log([...menu.entries()]);
 // abcd.print({
 //   adress: bbsr,
 // });
-const carData = [
-  {
-    type: '4 wheeler',
-    data: {
-      name: 'BMW',
-      color: 'red',
-      model: {
-        modeltype: 0,
-      },
-    },
-  },
-  {
-    type: '4 wheeler',
-    data: {
-      name: 'ferari',
-      color: 'red',
-    },
-  },
-  {
-    type: '4 wheeler',
-    data: {
-      name: 'mercedes',
-      color: 'red',
-    },
-  },
-];
-// With out using optional chaning
-// cant read the properties of an undefine
-console.log(carData[0].data.model);
-// using scope chaning
-//As we have use the scope chaining is return as soon it encounter nullish values
-console.log(carData[0].data.model?.modeltype);
-// but without returning Nullish values if we want to return some string 'model is not found so we can use short circuting here
-// with nullish coching operater
-console.log(carData[1].data.model?.modeltype || 'model is not found');
-// if it has model and modelhas model type as 0 then as we have using short circting thn 0 is consider as a faslely value so we can use nullish operate hers
-console.log(carData[0].data.model?.modeltype ?? 'model is nullish');
+// const carData = [
+//   {
+//     type: '4 wheeler',
+//     data: {
+//       name: 'BMW',
+//       color: 'red',
+//       model: {
+//         modeltype: 0,
+//       },
+//     },
+//   },
+//   {
+//     type: '4 wheeler',
+//     data: {
+//       name: 'ferari',
+//       color: 'red',
+//     },
+//   },
+//   {
+//     type: '4 wheeler',
+//     data: {
+//       name: 'mercedes',
+//       color: 'red',
+//     },
+//   },
+// ];
+// // With out using optional chaning
+// // cant read the properties of an undefine
+// console.log(carData[0].data.model);
+// // using scope chaning
+// //As we have use the scope chaining is return as soon it encounter nullish values
+// console.log(carData[0].data.model?.modeltype);
+// // but without returning Nullish values if we want to return some string 'model is not found so we can use short circuting here
+// // with nullish coching operater
+// console.log(carData[1].data.model?.modeltype || 'model is not found');
+// // if it has model and modelhas model type as 0 then as we have using short circting thn 0 is consider as a faslely value so we can use nullish operate hers
+// console.log(carData[0].data.model?.modeltype ?? 'model is nullish');
 
-// const data = {
-//   dataelement: {
-//     name: 'abhihsk',
-//     age: 21,
-//     clg: 'mca',
-//     address: 'bbsr',
-//     ph: 989899,
-//     hasvichel: true,
+// // const data = {
+// //   dataelement: {
+// //     name: 'abhihsk',
+// //     age: 21,
+// //     clg: 'mca',
+// //     address: 'bbsr',
+// //     ph: 989899,
+// //     hasvichel: true,
+// //   },
+// // };
+
+// // function print(...obj) {
+// //   console.log(obj[0].name);
+// //   console.log('hello');
+// //   // console.log(age);
+// // }
+
+// // const arr = [1, 2, 3, 4, [2, 3, 4]];
+// // console.log([...arr[4]]);
+// // console.log({ ...data.dataelement });
+// // print({ ...data.dataelement });
+
+// // const arr = [1, 2, 4, [2, 4, [3, 5]]];
+// // console.log(arr[3][3]);
+
+// const openingHours = {
+//   thu: {
+//     open: 12,
+//     close: 22,
+//   },
+//   fri: {
+//     open: 11,
+//     close: 23,
+//   },
+//   sat: {
+//     open: 0, // Open 24 hours
+//     close: 24,
 //   },
 // };
-
-// function print(...obj) {
-//   console.log(obj[0].name);
-//   console.log('hello');
-//   // console.log(age);
+// for (let day of Object.keys(openingHours)) {
+//   console.log(day);
 // }
+// for (let day of Object.values(openingHours)) {
+//   console.log(day);
+// }
+// for (let [day, { open, close }] of Object.entries(openingHours)) {
+//   console.log(`on ${day} we are open${open} and close ${close}`);
+// }
+// Set
+//collection of unique values // no duplicate
+// can have mix datatype
+const orderSet = new Set([
+  'pasta',
+  'pizza',
+  'pizza',
+  'chickem',
+  'pasta',
+  'pizza',
+]); //set(iterable)
 
-// const arr = [1, 2, 3, 4, [2, 3, 4]];
-// console.log([...arr[4]]);
-// console.log({ ...data.dataelement });
-// print({ ...data.dataelement });
+console.log(orderSet);
+console.log(new Set('Abhihske'));
 
-// const arr = [1, 2, 4, [2, 4, [3, 5]]];
-// console.log(arr[3][3]);
+//How to work with set
 
-const openingHours = {
-  thu: {
-    open: 12,
-    close: 22,
-  },
-  fri: {
-    open: 11,
-    close: 23,
-  },
-  sat: {
-    open: 0, // Open 24 hours
-    close: 24,
-  },
-};
-for (let day of Object.keys(openingHours)) {
-  console.log(day);
-}
-for (let day of Object.values(openingHours)) {
-  console.log(day);
-}
-for (let [day, { open, close }] of Object.entries(openingHours)) {
-  console.log(`on ${day} we are open${open} and close ${close}`);
-}
+console.log(orderSet.size); //legth in array here size
+console.log(orderSet.has('pasta')); // includes here has
+console.log(orderSet.has('Bread'));
+orderSet.add('Garlic Bread');
+orderSet.add('Garlic Bread');
+console.log(orderSet);
+orderSet.delete('pizza');
+console.log(orderSet);
+// Retrive values like array?
+console.log(orderSet[0]); //undenfine
+// orderSet.clear();
+// console.log(orderSet);
+// as this is iterable we can  loop over it
+for (const order of orderSet) console.log(order);
+
+// use case of set
+//is duplicate values in to an array
+const staff = [
+  'waiter',
+  'chef',
+  'waiter',
+  'chef',
+  'Manager',
+  'chef',
+  'Waiter ',
+];
+// const staffunique = new Set(staff);
+// console.log(staffunique);
+// now convert the staffUnique Set to array as both them them iterable easy
+// beacuse both of them is iterable
+// As u have learn spred work in iterable
+// const staffunique = [...new Set(staff)];
+// console.log(staffunique);
+// if do not need to covert we just want to know the unique postion of an
+const staffuniquePostion = new Set(staff).size;
+console.log(staffuniquePostion);
+
+// how many different in my name
+console.log(new Set('aabhi').size);
