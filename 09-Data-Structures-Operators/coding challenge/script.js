@@ -135,3 +135,4 @@ for (const player of game.scored) {
   scoress[player] ? scoress[player]++ : (scoress[player] = 1);
 }
 console.log(scoress);
+console.log(Object.entries(game.odds));
