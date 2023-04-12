@@ -675,6 +675,11 @@ console.log(question.get(question.get('correct') === Answer));
 
 // convet map to array
 //build an new array and spreed it to map
+const somearr = [[3, 4], [4, 5], 5];
+// const newSomeArray = [1, 2, 3, ...somearr];
+console.log(...somearr);
+// console.log(newSomeArray);
+
 console.log([...question]);
 const newMapArray = [...question];
 console.log('hello', newMapArray);
