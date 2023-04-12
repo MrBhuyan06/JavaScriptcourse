@@ -646,7 +646,7 @@ const question = new Map([
   [true, 'Correct'],
   [false, 'Try again '],
 ]);
-console.log(question);
+console.log('Hello', question);
 
 // covert object to map
 console.log(Object.entries(openingHours));
@@ -656,7 +656,9 @@ console.log(openhour);
 
 // As oject are iterable lets use it for of
 console.log(question.get('question'));
+console.log('hello', question);
 for (const [key, value] of question) {
+  // console.log('hello', key, value);
   if (typeof key === 'number') {
     console.log(`Answer ${key} : ${value}`);
   }
@@ -675,7 +677,7 @@ console.log(question.get(question.get('correct') === Answer));
 //build an new array and spreed it to map
 console.log([...question]);
 const newMapArray = [...question];
-console.log(newMapArray);
+console.log('hello', newMapArray);
 console.log([...question.entries()]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
