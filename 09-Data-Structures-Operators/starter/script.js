@@ -728,4 +728,68 @@ checkMiddleSeet('23c');
 checkMiddleSeet('3E');
 
 console.log(new String('Abhi'));
-console.log(typeOf new String('Abhi'));
+// console.log(tyString('Abhi'));
+
+// Aprt 2
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// Fix Capitalization
+const passenger = 'AbHI';
+const PassLower = passenger.toLowerCase();
+const passCorrect = PassLower[0].toUpperCase() + PassLower.slice(1);
+console.log(passCorrect);
+
+//comparig Email
+
+const email = 'hello@abhi.io';
+const loginEmail = '  Hello@Abhi.In \n';
+
+const lowerEmail = loginEmail.toLowerCase();
+const trimmmedEmail = lowerEmail.trimEnd().trimStart();
+console.log(trimmmedEmail);
+const normaiizeEmail = loginEmail.toLowerCase().trim();
+console.log(email === normaiizeEmail);
+
+//replace
+const priceins = ' 12,000rs';
+const priceUsa = priceins.replace('rs', '$').replace(',', '.');
+console.log(priceUsa);
+
+const annument = 'All passenger come to boarding door 23, Boarding door 23';
+console.log(annument.replace('door', 'gate'));
+console.log(annument.replaceAll('door', 'gate'));
+console.log(annument.replace(/door/g, 'gate'));
+
+//replace is a also case sensative
+
+// methods return boolean
+
+// includes
+// startWith
+// endWith
+
+const plane2 = 'airIndianeo';
+console.log(plane2.includes('In'));
+console.log(plane2.includes('in'));
+console.log(plane2.startsWith('ai'));
+console.log(plane2.startsWith('ai'));
+
+if (plane2.startsWith('air') && plane2.endsWith('neo')) {
+  console.log('Part of new Buss');
+}
+
+//Practise Example
+
+const checkBagged = function (items) {
+  const bagges = items.toLowerCase();
+  if (bagges.includes('knife') || bagges.includes('gun')) {
+    console.log('You are not allowed for board');
+  } else {
+    console.log('welcome aborad!');
+  }
+};
+
+checkBagged('i Have a laptop, Food and a pockect knife');
+checkBagged('i Have socks and camera');
+checkBagged('i Have snacks and a gun for potection');
