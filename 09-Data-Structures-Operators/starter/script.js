@@ -686,3 +686,46 @@ console.log('hello', newMapArray);
 console.log([...question.entries()]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
+
+//  String in javaScript
+
+const airline = 'Indiogio of india';
+const plane = 'A320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+console.log(airline.length);
+console.log('B737'.length);
+console.log(airline.indexOf('i')); // fist occurence
+console.log(airline.lastIndexOf('i'));
+console.log(airline.indexOf('of')); //Case sensitive
+
+// this is return new string
+// The return a substring of an original string just because it imposible mutate the string because there are non primitives
+console.log(airline.slice(9)); //start postion as argument
+console.log(airline.slice(9, 11));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+// Negative
+console.log(airline.slice(0));
+
+const checkMiddleSeet = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') {
+    console.log('you Got the Middle Seat 🤭');
+  } else {
+    console.log('You Got Lucky🥳');
+  }
+};
+
+checkMiddleSeet('11B');
+checkMiddleSeet('23c');
+checkMiddleSeet('3E');
+
+console.log(new String('Abhi'));
+console.log(typeOf new String('Abhi'));
