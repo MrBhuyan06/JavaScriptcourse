@@ -852,3 +852,6 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(17);
+
+const age = 'My age is 23';
+console.log(age.search('is'));
