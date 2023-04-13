@@ -793,3 +793,62 @@ const checkBagged = function (items) {
 checkBagged('i Have a laptop, Food and a pockect knife');
 checkBagged('i Have socks and camera');
 checkBagged('i Have snacks and a gun for potection');
+
+// Strinf Part 3
+// Split is allowed use split the string in to musltiple part  divid  based on the divider  string
+
+console.log('a+very+nice+String'.split('+')); // strore the element into an array
+console.log('Abhishek Bhuyan'.split(' '));
+const [firstName, LastName] = 'Abhishek Bhuyan'.split(' ');
+console.log(firstName, LastName);
+
+const newName = ['Mr', firstName, LastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const passengers = 'abhishek and smit davis';
+
+const CapitalizationName = function (name) {
+  const names = name.split(' ');
+  console.log(names);
+  const nameUpper = [];
+  for (const n1 of names) {
+    // console.log(n[0]);
+    // nameUpper.push(n1[0].toUpperCase() + n1.slice(1));
+    nameUpper.push(n1.replace(n1[0], n1[0].toUpperCase()));
+  }
+  console.log('ddd', nameUpper);
+  console.log('dd', nameUpper.join(' '));
+};
+CapitalizationName('abhishek adn Smith Davis');
+CapitalizationName('abhishek Bhuyna');
+
+// padding a String
+
+const msg = 'Go to Gate 23';
+console.log(msg.padStart(24, '+').padEnd('35', '+'));
+console.log('Abhi'.padStart(24, '+').padEnd('35', '+'));
+
+//case study life example
+//credit card no in the internet
+
+const maskCredit = function (number) {
+  const string = number + '';
+  console.log(string);
+  const last = string.slice(-4);
+  return last.padStart(string.length, '*');
+};
+
+console.log(maskCredit(43333474999434));
+maskCredit('2332323232323923');
+
+//repeat Methods
+const message3 = 'Bad Weather .. All Depatues is Delayed.. ';
+console.log(message3.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There Are ${n} planes in line ${'✈️'.repeat(n)}`);
+};
+
+planesInLine(5);
+planesInLine(3);
+planesInLine(17);
