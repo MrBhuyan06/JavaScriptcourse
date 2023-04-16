@@ -1,16 +1,19 @@
-// "use strict";
+"use strict";
 
-// let hasDriversLicense = false;
-// const passTest = true;
+names = "nmji";
+console.log(names);
+
+let hasDriversLicense = false;
+const passTest = true;
 
 // // // let interface = "HEllo";
 // // // console.log(interface);
-// if (passTest) {
-//   hasDriverLicense = true;
-// }
-// if (hasDriversLicense) {
-//   console.log("i can drive");
-// }
+if (passTest) {
+  hasDriverLicense = true;
+}
+if (hasDriversLicense) {
+  console.log("i can drive");
+}
 
 // //Function
 

@@ -189,7 +189,7 @@ const inputYear = "1991";
 // // OR
 console.log(Number(inputYear) + 18);
 // console.log(Number("1991"));
-// console.log(String(23), 23);
+console.log(String(23), 23);
 console.log(23 + "", 23);
 
 // // type coercion
@@ -208,12 +208,14 @@ console.log("20" / "2");
 
 // // js there is 5 fasly value 0,'',undefine, null, NaN
 
-// console.log(Boolean(0));
-// console.log(Boolean(undefined));
-// console.log(Boolean(" "));
-// console.log(Boolean("abhi"));
-// console.log(Boolean(NaN));
-// console.log(Boolean(null));
+console.log(Boolean(0));
+console.log(0);
+console.log("HELLO", undefined);
+console.log(Boolean(undefined));
+console.log(Boolean(" "));
+console.log(Boolean("abhi"));
+console.log(Boolean(NaN));
+console.log(Boolean(null));
 console.log("HEy", "Hello" - undefined);
 
 // const money = 100;
