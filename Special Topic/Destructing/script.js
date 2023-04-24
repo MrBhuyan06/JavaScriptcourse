@@ -37,6 +37,11 @@ const restaurant = {
     }
   },
 };
+
+//Default value to the destructing varibale
+const { menu = [], starterMenu: starter = [] } = restaurant;
+console.log(menu, starter);
+
 //Destrucing basicallly it mean to assign an object key or array element to different indivual values
 const arrayOfResturent = [
   {
@@ -101,3 +106,36 @@ printCardetailsBarket(...arrayOfCarDetails[0][1]);
 printCardetailsAcceptArgumetKeywrd(...arrayOfCarDetails[0][1]);
 console.log(arrayOfCarDetails[0][1]);
 console.log(...arrayOfCarDetails[0][1]);
+
+//Mutating an avraible
+let a = 11;
+let b = 22;
+const obj = {
+  a: 22,
+  b: 34,
+  c: 34,
+};
+console.log(a, b);
+({ a, b } = obj);
+console.log(a, b);
+
+//Nested object destruing
+const gymWeekendOpingHours = {
+  sat: {
+    moring: '6-10',
+    eve: '7-9',
+  },
+  sun: {
+    moring: '6-10',
+    eve: '7-9',
+  },
+};
+
+const {
+  sat: { moring, eve },
+} = gymWeekendOpingHours;
+console.log(moring, eve);
+//in array
+const array = [1, 2, [23, 34]];
+const [, , [c, d]] = array;
+console.log(c, d);
