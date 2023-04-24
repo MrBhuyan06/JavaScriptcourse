@@ -76,7 +76,32 @@ function addExpress(a, b, c) {
 //As much as value we can pass as argument which is acumuted at arguments keyword inspite being not declared in function paramenter
 addExpress(1, 2, 3);
 
-const addArrow = (a, b, c) => {
-  console.log(arguments);
+// const addArrow = (a, b, c) => {
+//   console.log(arguments);
+// };
+// addArrow(1, 2, 3);
+
+//Memory Representation
+// const hadJob = {
+//   name: 'Abhishek',
+//   job: false,
+// };
+// object copy
+
+// console.log('Before copy', hadJob.job);
+// const getJob = hadJob;
+// getJob.job = true;
+// console.log('After copy', hadJob.job);
+//Basically while we copy the object it didnot create new mwmory Address it basically refresed to same memory location
+
+// for createing different location we have method called as Object,assign
+//Lets do it
+const hadJob = {
+  name: 'Abhishek',
+  job: false,
 };
-addArrow(1, 2, 3);
+console.log('Before copy', hadJob.job);
+const hadJobCopy = Object.assign({}, hadJob);
+hadJobCopy.job = true;
+console.log('After Copy', hadJob.job);
+console.log('Copy by object.assign', hadJobCopy.job);
