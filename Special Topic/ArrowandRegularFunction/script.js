@@ -1,8 +1,8 @@
-'use strict';
+"use strict";
 
 const abhi = {
-  firstName: 'Abhishel',
-  lastName: 'Bhuyan',
+  firstName: "Abhishel",
+  lastName: "Bhuyan",
   printNameFromObj: () => {
     console.log(this.firstName);
   },
@@ -14,7 +14,7 @@ var x = 10;
 console.log(x === window.x);
 
 function checkTheScope() {
-  var x = 'Abhishek';
+  var x = "Abhishek";
   // console.log(abc);
   console.log(x === window.x);
 }
@@ -97,11 +97,11 @@ addExpress(1, 2, 3);
 // for createing different location we have method called as Object,assign
 //Lets do it
 const hadJob = {
-  name: 'Abhishek',
+  name: "Abhishek",
   job: false,
 };
-console.log('Before copy', hadJob.job);
+console.log("Before copy", hadJob.job);
 const hadJobCopy = Object.assign({}, hadJob);
 hadJobCopy.job = true;
-console.log('After Copy', hadJob.job);
-console.log('Copy by object.assign', hadJobCopy.job);
+console.log("After Copy", hadJob.job);
+console.log("Copy by object.assign", hadJobCopy.job);
