@@ -123,7 +123,7 @@ const restaurant = {
 // const nested = [2, 4, [5, 6]];
 // // console.log(nested[2][0]);
 // // const [i, , j] = nested;
-// // console.log(i, j);
+// // console.log(i, j);,
 // const [i, , [j, k]] = nested;
 // console.log(i, j, k);
 

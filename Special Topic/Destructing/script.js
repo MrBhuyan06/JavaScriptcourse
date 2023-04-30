@@ -43,53 +43,53 @@ const { menu = [], starterMenu: starter = [] } = restaurant;
 console.log(menu, starter);
 
 //Destrucing basicallly it mean to assign an object key or array element to different indivual values
-const arrayOfResturent = [
-  {
-    data: {
-      name: 'GoFoodtin',
-      address: 'sundarpad',
-      rating: '4star',
-    },
-  },
-  {
-    data: {
-      name: 'GoFoodtin1',
-      address: 'sundarpad1',
-      rating: '4star1',
-    },
-  },
-  {
-    data: {
-      name: 'GoFoodtin2',
-      address: 'sundarpad2',
-      rating: '4star2',
-    },
-  },
-];
+// const arrayOfResturent = [
+//   {
+//     data: {
+//       name: 'GoFoodtin',
+//       address: 'sundarpad',
+//       rating: '4star',
+//     },
+//   },
+//   {
+//     data: {
+//       name: 'GoFoodtin1',
+//       address: 'sundarpad1',
+//       rating: '4star1',
+//     },
+//   },
+//   {
+//     data: {
+//       name: 'GoFoodtin2',
+//       address: 'sundarpad2',
+//       rating: '4star2',
+//     },
+//   },
+// ];
 // console.log(arrayOfResturent[0].data);
 // {name: 'GoFoodtin', address: 'sundarpad', rating: '4star'}
 
-function toPrintRestuarentDetails({ name: Name, rating: Rating }) {
-  // console.log(prop);
-  console.log(Name, Rating);
-}
-toPrintRestuarentDetails({ ...arrayOfResturent[0].data });
-console.log({ ...arrayOfResturent[0].data });
-console.log(arrayOfResturent[0].data);
+// function toPrintRestuarentDetails({ name: Name, rating: Rating }) {
+//   // console.log(prop);
+//   console.log(Name, Rating);
+// }
+// toPrintRestuarentDetails({ ...arrayOfResturent[0].data });
+// console.log({ ...arrayOfResturent[0].data });
+// console.log(arrayOfResturent[0].data);
 
-function printCardetails([name, model, color]) {
-  console.log(name, model, color);
-}
-//withOutUsing[]
-function printCardetailsBarket(name, model, color) {
-  console.log(name, model, color);
-}
-function printCardetailsAcceptArgumetKeywrd() {
-  // console.log(name, model, color);
-  console.log('1', arguments);
-  const [name, model, color] = arguments;
-  console.log(name, model, color);
-}
+// function printCardetails([name, model, color]) {
+//   console.log(name, model, color);
+// }
+// //withOutUsing[]
+// function printCardetailsBarket(name, model, color) {
+//   console.log(name, model, color);
+// }
+// function printCardetailsAcceptArgumetKeywrd() {
+//   // console.log(name, model, color);
+//   console.log('1', arguments);
+//   const [name, model, color] = arguments;
+//   console.log(name, model, color);
+// }
 // {
 
 // }
@@ -101,11 +101,11 @@ const arrayOfCarDetails = [
   ['car', (datas = ['tata', '1103', 'white'])],
   ['car', (datas = ['mahindra', '1093', 'brown'])],
 ];
-printCardetails(arrayOfCarDetails[0][1]);
-printCardetailsBarket(...arrayOfCarDetails[0][1]);
-printCardetailsAcceptArgumetKeywrd(...arrayOfCarDetails[0][1]);
-console.log(arrayOfCarDetails[0][1]);
-console.log(...arrayOfCarDetails[0][1]);
+// printCardetails(arrayOfCarDetails[0][1]);
+// printCardetailsBarket(...arrayOfCarDetails[0][1]);
+// printCardetailsAcceptArgumetKeywrd(...arrayOfCarDetails[0][1]);
+// console.log(arrayOfCarDetails[0][1]);
+// console.log(...arrayOfCarDetails[0][1]);
 
 //Mutating an avraible
 let a = 11;
@@ -139,3 +139,62 @@ console.log(moring, eve);
 const array = [1, 2, [23, 34]];
 const [, , [c, d]] = array;
 console.log(c, d);
+
+const tities = ['bhuyan', 'pandas', 'mohanty'];
+const [abhiTittl, , babulu] = tities;
+console.log(abhiTittl, babulu);
+//Nested Destructing
+const number = [1, 2, 3, [2, 4, 5]];
+const [, , , [aa, bb, cc]] = number;
+console.log(aa, bb, cc);
+//Object destructing
+const arrayOfResturent = [
+  {
+    data: {
+      names: 'GoFoodtin',
+      address: 'sundarpad',
+      rating: '4star',
+    },
+  },
+  {
+    data: {
+      name: 'GoFoodtin1',
+      address: 'sundarpad1',
+      rating: '4star1',
+    },
+  },
+  {
+    data: {
+      name: 'GoFoodtin2',
+      address: 'sundarpad2',
+      rating: '4star2',
+    },
+  },
+];
+const { names, address, rating } = arrayOfResturent[0].data;
+console.log(names);
+const count = {
+  one: 1,
+  two: 2,
+  three: {
+    name: 3,
+  },
+};
+
+const {
+  three: { name },
+} = count;
+console.log(name + 'hello');
+
+let leg = 36;
+let cheast = 23;
+[cheast, leg] = [leg, cheast];
+console.log(cheast, leg);
+
+const restuarent = {
+  resName: 'Go Foodition',
+  address: 'BBSR',
+  priceForTwo: '300',
+  AvgRating: 4.4,
+};
+image.png
