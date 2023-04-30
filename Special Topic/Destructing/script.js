@@ -197,4 +197,37 @@ const restuarent = {
   priceForTwo: '300',
   AvgRating: 4.4,
 };
-image.png
+
+const array1 = [1, 3, 4];
+for (let [index, ele] of array1.entries()) {
+  console.log(`index ${index} and element ${ele}`);
+}
+
+const carData = [
+  {
+    type: '4 wheeler',
+    data: {
+      name: 'BMW',
+      color: 'red',
+      model: {
+        modeltype: 0,
+      },
+    },
+  },
+  {
+    type: '4 wheeler',
+    data: {
+      0: 'zero',
+      name: 'ferari',
+      color: 'red',
+    },
+  },
+  {
+    type: '4 wheeler',
+    data: {
+      name: 'mercedes',
+      color: 'red',
+    },
+  },
+];
+console.log(carData[0].data.model.modeltype ?? 'model has no type');
