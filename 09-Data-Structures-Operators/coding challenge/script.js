@@ -227,11 +227,38 @@ for ([key, values] of gameEvents) {
 // you're stuck. Then pause and continue!
 // Afterwards, test with your own test data!
 // GOOD LUCK �
+// document.querySelector("#text").addEventListener("onChange", (e) => {
+//   console.log(e.target.values);
+// });
+
+// console.log(text.textContent);
+
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+document.querySelector("button").addEventListener("click", () => {
+  console.log("hello");
+  const textareValue = document.querySelector("textarea").value;
+  // console.log(textareValue);
+  const textareaSplit = textareValue.split("\n");
+  console.log(textareaSplit);
+  for (let [i, row] of textareaSplit.entries()) {
+    const [first, last] = row.toLowerCase().trim().split("_");
+    // console.log(last);
+    const output = `${first}${last.replace(last[0], last[0].toUpperCase())}`;
+    console.log(`${output.padEnd(20)} ${"✅".repeat(i + 1)}`);
+  }
+});
 
 const variableNameCorrector = function (varibale) {
   const variableElementArray = varibale.split("_");
-  const camelCaseVariable = variableElementArray[0];
-  console.log(camelCaseVariable.slice(0, 1).toUpperCase());
+  const camelCaseVariable = variableElementArray[1];
+  const newVariable = [];
+  console.log(
+    newVariable.push(
+      camelCaseVariable.slice(0, 1).toUpperCase() + camelCaseVariable.slice(1)
+    )
+  );
   console.log(variableElementArray.join(""));
   console.log(variableElementArray);
   // for (const variable of variableElementArray) {
