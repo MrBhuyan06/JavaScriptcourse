@@ -1,3 +1,12 @@
+const a = [1, 4, 8, 9];
+console.log(a);
+a[0] = 4;
+a = [3, 7, 9];
+
+console.log(a);
+
+console.log("test", "18" == 18);
+console.log("22" - 22);
 // let js = "Amazing";
 // console.log(40 + 60);
 
@@ -8,6 +17,8 @@
 
 // let firstName = "Abhishek";
 // console.log(firstName);
+myname = "Abhihske";
+console.log(myname);
 
 // // convaction  and rule to Declar a variable
 // /**
@@ -207,12 +218,12 @@ console.log("20" / "2");
 // // truthy and falsy value
 
 // // js there is 5 fasly value 0,'',undefine, null, NaN
-
+console.log("hello");
 console.log(Boolean(0));
 console.log(0);
 console.log("HELLO", undefined);
 console.log(Boolean(undefined));
-console.log(Boolean(" "));
+console.log("jj", Boolean(""));
 console.log(Boolean("abhi"));
 console.log(Boolean(NaN));
 console.log(Boolean(null));
