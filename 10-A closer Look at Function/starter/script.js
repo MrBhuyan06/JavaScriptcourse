@@ -187,4 +187,57 @@ book.apply(airUk, callArgument);
 //  Or the moderm way to do so is very easy
 book.call(airAsisa, ...callArgument);
 
-// Build a call And apply menthod example using a gym example
+//bind method
+const airBrazil = {
+  airline: 'airBrazil',
+  alcode: 'AB',
+  Booking: [],
+};
+// const airBrazilBook = book.bind(airBrazil, 23);
+// console.log(airBrazilBook);
+// airBrazilBook('subham');
+// console.log(airBrazil.Booking);
+//practial Appication
+//this mean  pass one argument to the function call before the the atcul
+// call made
+
+//Passing all the parameter in the bind method
+const airBrazilBook = book.bind(airBrazil, 23, 'abhi');
+
+airBrazilBook();
+console.log(airBrazil.Booking);
+
+// With Event Listeners
+airBrazil.planes = 300;
+airBrazil.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+// lufthansa.buyPlane();
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', airBrazil.buyPlane.bind(airBrazil));
+
+// Partial application
+const addTax = (rate, value) => value + value * rate;
+
+console.log(addTax(0.1, 200));
+
+const addVAT = addTax.bind(null, 0.23);
+
+// addVat= value= value + value * 0.23
+console.log(addVAT(100));
+console.log(addVAT(23));
+
+// As think using a  function calling anthore function
+const addTAX2 = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+const addVAT2 = addTAX2(0.23);
+console.log(addVAT2);
+console.log(addVAT2(100));
