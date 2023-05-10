@@ -54,6 +54,15 @@
 //pass by value and passing in refrence
 //javascript is not has passing by refrence it pasing by value but it look like passing by refrence
 
+let myName = 'Abhishek';
+const changeName = function (myName) {
+  myName = 'AbhihskeBhuyna';
+  console.log(myName);
+};
+console.log(myName);
+changeName(myName);
+console.log('Hemmlo', myName);
+
 //first class and higher order functions
 //create a own higher order function
 const oneWord = function (str) {
