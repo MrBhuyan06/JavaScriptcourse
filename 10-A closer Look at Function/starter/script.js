@@ -240,4 +240,4 @@ const addTAX2 = function (rate) {
 };
 const addVAT2 = addTAX2(0.23);
 console.log(addVAT2);
-console.log(addVAT2(100));
+console.log(addVAT2(00));
