@@ -122,3 +122,15 @@ const tranformer = function (str, fn) {
 tranformer('Abhi bhuyna', oneWord2);
 tranformer('Abhi bhuyna', changeStr);
 tranformer('Abhi bhuyna', changeStr);
+
+// Function return anthore function
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+const GreetHey = greet('Hey');
+console.log(GreetHey);
+GreetHey('Abhihske');
+GreetHey('Smriti');
