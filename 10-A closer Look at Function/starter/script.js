@@ -70,6 +70,9 @@ const oneWord = function (str) {
 };
 const upperFirstWord = function (str) {
   const [first, ...others] = str.split(' ');
+  console.log(others);
+  console.log('hello', ...others);
+  console.log([first.toUpperCase(), ...others].join(' '));
   return [first.toUpperCase(), ...others].join(' ');
 };
 
@@ -82,3 +85,40 @@ const transformer = function (str, fn) {
 
 transformer('JavaScript is the best', upperFirstWord);
 transformer('JavaScript is the best', oneWord);
+
+const greets = function () {
+  return 'Namaster';
+};
+
+const welcomeMessage = name => {
+  let greet = greets();
+  return name + greet;
+};
+console.log(welcomeMessage('abhi'));
+
+// Questin demostrated the higher order function
+// made a fucntion which take a str as input produce the single world
+const oneWord2 = function (str) {
+  return str.replaceAll(' ', '').toLowerCase();
+};
+
+//made a function which take a str as input and transform the str
+//as Abhishek Bhuyna
+// outout ABHISHEK bhuyna
+const changeStr = function (str) {
+  const [first, ...second] = str.split(' ');
+  return [first.toUpperCase(), ...second].join(' ');
+};
+
+const tranformer = function (str, fn) {
+  console.log('str before Applay Method');
+  console.log(
+    `Str and this is done by functionName ${fn.name} aftre Applay Method ${fn(
+      str
+    )}`
+  );
+};
+
+tranformer('Abhi bhuyna', oneWord2);
+tranformer('Abhi bhuyna', changeStr);
+tranformer('Abhi bhuyna', changeStr);
