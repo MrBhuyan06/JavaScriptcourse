@@ -143,101 +143,130 @@
 // const greetHey = greet('hey');
 // greetHey('Abhi');
 
-// Call and Applay method
-const airIndia = {
-  airline: 'airIndiaJet',
-  alcode: 'AIT',
-  Booking: [],
-  book(seatNum, passengerName) {
-    console.log(
-      `${passengerName} book a set on ${this.airline} flight ${this.alcode}`
-    );
-    this.Booking.push({
-      flight: `${this.airline}${this.alcode}`,
-      name: passengerName,
-    });
-  },
-};
-const airAsisa = {
-  airline: 'airAsisa',
-  alcode: 'AS',
-  Booking: [],
-};
+// // Call and Applay method
+// const airIndia = {
+//   airline: 'airIndiaJet',
+//   alcode: 'AIT',
+//   Booking: [],
+//   book(seatNum, passengerName) {
+//     console.log(
+//       `${passengerName} book a set on ${this.airline} flight ${this.alcode}`
+//     );
+//     this.Booking.push({
+//       flight: `${this.airline}${this.alcode}`,
+//       name: passengerName,
+//     });
+//   },
+// };
+// const airAsisa = {
+//   airline: 'airAsisa',
+//   alcode: 'AS',
+//   Booking: [],
+// };
 
-airIndia.book(212, 'Abhishek Bhuyan');
+// airIndia.book(212, 'Abhishek Bhuyan');
 
-// Storing the method refrence into individual Variabl
-const book = airIndia.book;
-// console.log(book);
+// // Storing the method refrence into individual Variabl
+// const book = airIndia.book;
+// // console.log(book);
 
-//As we know this variable is dyanamic this value is basically depends how the function is called as here this is just a normal function call so in normal function call this is belong to the undefine as strict mode
-// book(2121, 'Smriti Pradhan');
-// So what we can do for this
+// //As we know this variable is dyanamic this value is basically depends how the function is called as here this is just a normal function call so in normal function call this is belong to the undefine as strict mode
+// // book(2121, 'Smriti Pradhan');
+// // So what we can do for this
 
-book.call(airAsisa, 212, 'Smriti Pradhan');
+// book.call(airAsisa, 212, 'Smriti Pradhan');
 
-const airUk = {
-  airline: 'airUk',
-  alcode: 'AS',
-  Booking: [],
-};
+// const airUk = {
+//   airline: 'airUk',
+//   alcode: 'AS',
+//   Booking: [],
+// };
 
-const callArgument = [232, 'Satabdi Gadhai'];
-book.apply(airUk, callArgument);
-//  Or the moderm way to do so is very easy
-book.call(airAsisa, ...callArgument);
+// const callArgument = [232, 'Satabdi Gadhai'];
+// book.apply(airUk, callArgument);
+// //  Or the moderm way to do so is very easy
+// book.call(airAsisa, ...callArgument);
 
-//bind method
-const airBrazil = {
-  airline: 'airBrazil',
-  alcode: 'AB',
-  Booking: [],
-};
-// const airBrazilBook = book.bind(airBrazil, 23);
-// console.log(airBrazilBook);
-// airBrazilBook('subham');
+// //bind method
+// const airBrazil = {
+//   airline: 'airBrazil',
+//   alcode: 'AB',
+//   Booking: [],
+// };
+// // const airBrazilBook = book.bind(airBrazil, 23);
+// // console.log(airBrazilBook);
+// // airBrazilBook('subham');
+// // console.log(airBrazil.Booking);
+// //practial Appication
+// //this mean  pass one argument to the function call before the the atcul
+// // call made
+
+// //Passing all the parameter in the bind method
+// const airBrazilBook = book.bind(airBrazil, 23, 'abhi');
+
+// airBrazilBook();
 // console.log(airBrazil.Booking);
-//practial Appication
-//this mean  pass one argument to the function call before the the atcul
-// call made
 
-//Passing all the parameter in the bind method
-const airBrazilBook = book.bind(airBrazil, 23, 'abhi');
+// // With Event Listeners
+// airBrazil.planes = 300;
+// airBrazil.buyPlane = function () {
+//   console.log(this);
 
-airBrazilBook();
-console.log(airBrazil.Booking);
+//   this.planes++;
+//   console.log(this.planes);
+// };
+// // lufthansa.buyPlane();
 
-// With Event Listeners
-airBrazil.planes = 300;
-airBrazil.buyPlane = function () {
-  console.log(this);
+// document
+//   .querySelector('.buy')
+//   .addEventListener('click', airBrazil.buyPlane.bind(airBrazil));
 
-  this.planes++;
-  console.log(this.planes);
-};
-// lufthansa.buyPlane();
+// // Partial application
+// const addTax = (rate, value) => value + value * rate;
 
-document
-  .querySelector('.buy')
-  .addEventListener('click', airBrazil.buyPlane.bind(airBrazil));
+// console.log(addTax(0.1, 200));
 
-// Partial application
-const addTax = (rate, value) => value + value * rate;
+// const addVAT = addTax.bind(null, 0.23);
 
-console.log(addTax(0.1, 200));
+// // addVat= value= value + value * 0.23
+// console.log(addVAT(100));
+// console.log(addVAT(23));
 
-const addVAT = addTax.bind(null, 0.23);
+// // As think using a  function calling anthore function
+// const addTAX2 = function (rate) {
+//   return function (value) {
+//     return value + value * rate;
+//   };
+// };
+// const addVAT2 = addTAX2(0.23);
+// console.log(addVAT2);
+// console.log(addVAT2(00));
 
-// addVat= value= value + value * 0.23
-console.log(addVAT(100));
-console.log(addVAT(23));
+//IIFE
+// Immediaately invoked function expression
+// IN this way we can runa function for one time and not execute in futre or disapper
 
-// As think using a  function calling anthore function
-const addTAX2 = function (rate) {
-  return function (value) {
-    return value + value * rate;
-  };
-};
-const addVAT2 = addTAX2(0.23);
-console.log(addVAT2);
-console.log(addVAT2(00));
+// Function statement
+function runOnce() {
+  console.log('functin run  once function statement');
+}
+
+//Function expression
+(function () {
+  console.log('runn once imediately');
+  const privates = '23';
+})();
+// console.log(privates);
+//Arrow Function
+(() => {
+  console.log('run once arrow function');
+})();
+//iife is may use for dataprotection or privacy but in mofern js it is not use for data protecttion
+//because of the block scope
+
+{
+  const isPrivate = 23;
+  var odd = 23;
+}
+// console.log(isPrivate);
+console.log(odd);
