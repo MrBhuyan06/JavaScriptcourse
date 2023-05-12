@@ -139,20 +139,21 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //   console.log(`Using forEach ${index}`);
 // });
 
-for (const movement of movements) {
+for (const [index, movement] of movements.entries()) {
   if (movement > 0) {
-    console.log(`You Deposites ${movement}`);
+    console.log(`You Deposites ${index + 1}  ${movement}`);
   } else {
-    console.log(`You Withdraw ${Math.abs(movement)}`);
+    console.log(`You Withdraw ${index + 1}  ${Math.abs(movement)}`);
   }
 }
 console.log('----FOREACH----');
 
-movements.forEach(movement => {
+movements.forEach((movement, index, arr) => {
+  console.log(arr);
   if (movement > 0) {
-    console.log(`You Deposites ${movement}`);
+    console.log(`You Deposites index  ${index + 1} ${movement}`);
   } else {
-    console.log(`You Withdraw ${Math.abs(movement)}`);
+    console.log(`You Withdraw index ${index + 1} ${Math.abs(movement)}`);
   }
 });
 //0:function(200)
