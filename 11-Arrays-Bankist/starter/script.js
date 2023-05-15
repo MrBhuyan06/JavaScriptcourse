@@ -81,6 +81,21 @@ const displayMovements = function (movements) {
 
 // displayMovements(account1.movements);
 // console.log(containerMovements.innerHTML);
+const user = 'Steven Thomas Williams';
+const createUserName = function (accs) {
+  accs.forEach(acc => {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(user => {
+        return user[0];
+      })
+      .join('');
+  });
+};
+
+createUserName(accounts);
+console.log(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -210,25 +225,27 @@ console.log(arr.slice(-1)[0]);
 // Array mehtod (transform method)
 //map filter reduce
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-//Map
-const euroToUsd = 1.1;
-const movementsUSD = movements.map(movement => {
-  return Math.trunc(movement * euroToUsd);
-});
-console.log(movements);
-console.log(movementsUSD);
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// //Map
+// const euroToUsd = 1.1;
+// const movementsUSD = movements.map(movement => {
+//   return Math.trunc(movement * euroToUsd);
+// });
+// console.log(movements);
+// console.log(movementsUSD);
 
-const movementsUSDfor = [];
-for (const mov of movements) {
-  movementsUSDfor.push(Math.trunc(mov * euroToUsd));
-}
-console.log(movementsUSDfor);
-// its has too has 3 parameter element,index,array
+// const movementsUSDfor = [];
+// for (const mov of movements) {
+//   movementsUSDfor.push(Math.trunc(mov * euroToUsd));
+// }
+// console.log(movementsUSDfor);
+// // its has too has 3 parameter element,index,array
+// // for each is create the side effect
+// const movementsDescriptions = movements.map(
+//   (mov, index) =>
+//     `Movement ${index + 1}: you ${mov > 0 ? 'deposited' : 'withdraw'}
+//   ${Math.abs(mov)}`
+// );
+// console.log(movementsDescriptions);
 
-const movementsDescriptions = movements.map(
-  (mov, index) =>
-    `Movement ${index + 1}: you ${mov > 0 ? 'deposited' : 'withdraw'} 
-  ${Math.abs(mov)}`
-);
-console.log(movementsDescriptions);
+//compute user name
