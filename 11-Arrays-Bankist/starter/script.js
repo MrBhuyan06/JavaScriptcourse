@@ -206,3 +206,29 @@ console.log(arr.slice(-1)[0]);
 // const arrr47 = [23, 23];
 // console.log(arrayOne.concat(arrayTwo, arrr47, arrr46, arrr45));
 // console.log( [1, 2, 3, 4].join('+'));
+
+// Array mehtod (transform method)
+//map filter reduce
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+//Map
+const euroToUsd = 1.1;
+const movementsUSD = movements.map(movement => {
+  return Math.trunc(movement * euroToUsd);
+});
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+for (const mov of movements) {
+  movementsUSDfor.push(Math.trunc(mov * euroToUsd));
+}
+console.log(movementsUSDfor);
+// its has too has 3 parameter element,index,array
+
+const movementsDescriptions = movements.map(
+  (mov, index) =>
+    `Movement ${index + 1}: you ${mov > 0 ? 'deposited' : 'withdraw'} 
+  ${Math.abs(mov)}`
+);
+console.log(movementsDescriptions);
