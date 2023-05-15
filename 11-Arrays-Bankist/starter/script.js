@@ -61,6 +61,27 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const displayMovements = function (movements) {
+  containerMovements.innerHTML = '';
+  containerMovements.textContent = '';
+  movements.forEach((mov, i) => {
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+
+    const html = `
+    <div class="movements__row">
+     <div class="movements__type movements__type--${type}">${i + 1}${type}</div>
+     
+     <div class="movements__value">${mov}</div>
+   </div>
+    
+    `;
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
+
+// displayMovements(account1.movements);
+// console.log(containerMovements.innerHTML);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -110,52 +131,75 @@ const currencies = new Map([
 // console.log(letters.join('-'));
 
 // The new At Method
-const arr = [23, 11, 64];
-console.log(arr[0]);
-console.log(arr.at(0));
+// const arr = [23, 11, 64];
+// console.log(arr[0]);
+// console.log(arr.at(0));
 
-//getting last array element
-console.log(arr.at(arr.length - 1));
-console.log(arr[arr.length - 1]);
-// solution to above
-console.log(arr.slice(-1)[0]);
-// More usefull
-console.log(arr.at(-1));
-// At method also work with Strins
-console.log('abhi'.at(-1));
+// //getting last array element
+// console.log(arr.at(arr.length - 1));
+// console.log(arr[arr.length - 1]);
+// // solution to above
+// console.log(arr.slice(-1)[0]);
+// // More usefull
+// console.log(arr.at(-1));
+// // At method also work with Strins
+// console.log('abhi'.at(-1));
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-// for (let i = 0; i <= movements.length - 1; i++) {
-//   console.log(`Using For Loop ${movements[i]}`);
+// // for (let i = 0; i <= movements.length - 1; i++) {
+// //   console.log(`Using For Loop ${movements[i]}`);
+// // }
+// // console.log('-------------');
+
+// // for (let index of movements) {
+// //   console.log(`Using For of ${index}`);
+// // }
+// // console.log('-------------');
+// // movements.forEach(index => {
+// //   console.log(`Using forEach ${index}`);
+// // });
+
+// for (const [index, movement] of movements.entries()) {
+//   if (movement > 0) {
+//     console.log(`You Deposites ${index + 1}  ${movement}`);
+//   } else {
+//     console.log(`You Withdraw ${index + 1}  ${Math.abs(movement)}`);
+//   }
 // }
-// console.log('-------------');
+// console.log('----FOREACH----');
 
-// for (let index of movements) {
-//   console.log(`Using For of ${index}`);
-// }
-// console.log('-------------');
-// movements.forEach(index => {
-//   console.log(`Using forEach ${index}`);
+// movements.forEach((movement, index, arr) => {
+//   console.log(arr);
+//   if (movement > 0) {
+//     console.log(`You Deposites index  ${index + 1} ${movement}`);
+//   } else {
+//     console.log(`You Withdraw index ${index + 1} ${Math.abs(movement)}`);
+//   }
 // });
-
-for (const [index, movement] of movements.entries()) {
-  if (movement > 0) {
-    console.log(`You Deposites ${index + 1}  ${movement}`);
-  } else {
-    console.log(`You Withdraw ${index + 1}  ${Math.abs(movement)}`);
-  }
-}
-console.log('----FOREACH----');
-
-movements.forEach((movement, index, arr) => {
-  console.log(arr);
-  if (movement > 0) {
-    console.log(`You Deposites index  ${index + 1} ${movement}`);
-  } else {
-    console.log(`You Withdraw index ${index + 1} ${Math.abs(movement)}`);
-  }
-});
 //0:function(200)
 //1:function(450)
 //2:function(400)
+
+// Array method
+const arrayOne = [1, 2, 3, 4, 5];
+const arrayTwo = [1, 2, 3, 4, 5];
+// console.log(arrayOne.length);
+console.log(arrayOne.push(1));
+console.log(arrayOne);
+console.log(arrayOne.pop());
+console.log(arrayOne);
+console.log(arrayOne.shift(2));
+console.log(arrayOne);
+console.log(arrayOne.unshift(2, 33));
+console.log(arrayOne);
+console.log(arrayOne.slice(1));
+console.log(arrayOne.slice(1, 3));
+console.log(arrayOne.slice(-2));
+// console.log(arrayOne);
+// console.log(arrayOne.splice(1, 2, 9, 9));
+// console.log(arrayOne);
+const arrr45 = [23, 23];
+const arrr46 = [23, 23];
+const arrr47 = [23, 23];
+console.log(arrayOne.concat(arrayTwo, arrr47, arrr46, arrr45));
