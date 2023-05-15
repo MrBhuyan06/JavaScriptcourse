@@ -131,7 +131,7 @@ const currencies = new Map([
 // console.log(letters.join('-'));
 
 // The new At Method
-// const arr = [23, 11, 64];
+const arr = [23, 11, 64];
 // console.log(arr[0]);
 // console.log(arr.at(0));
 
@@ -139,7 +139,7 @@ const currencies = new Map([
 // console.log(arr.at(arr.length - 1));
 // console.log(arr[arr.length - 1]);
 // // solution to above
-// console.log(arr.slice(-1)[0]);
+console.log(arr.slice(-1)[0]);
 // // More usefull
 // console.log(arr.at(-1));
 // // At method also work with Strins
@@ -182,24 +182,27 @@ const currencies = new Map([
 //2:function(400)
 
 // Array method
-const arrayOne = [1, 2, 3, 4, 5];
-const arrayTwo = [1, 2, 3, 4, 5];
-// console.log(arrayOne.length);
-console.log(arrayOne.push(1));
-console.log(arrayOne);
-console.log(arrayOne.pop());
-console.log(arrayOne);
-console.log(arrayOne.shift(2));
-console.log(arrayOne);
-console.log(arrayOne.unshift(2, 33));
-console.log(arrayOne);
-console.log(arrayOne.slice(1));
-console.log(arrayOne.slice(1, 3));
-console.log(arrayOne.slice(-2));
+// const arrayOne = [1, 2, 3, 4, 5];
+// console.log(arrayOne.reverse());
+// // console.log(arrayOne);
+// // const arrayTwo = [1, 2, 3, 4, 5];
+// // // console.log(arrayOne.length);
+// console.log(arrayOne.push(1));
+// // console.log(arrayOne);
+// // console.log(arrayOne.pop());
+// // console.log(arrayOne);
+// console.log(arrayOne.shift(2));
+// // console.log(arrayOne);
+// console.log(arrayOne.unshift(2, 33));
+// // console.log(arrayOne);
+// console.log(arrayOne.slice(1));
+// console.log(arrayOne.slice(1, 3));
+// console.log(arrayOne.slice(-2));
 // console.log(arrayOne);
 // console.log(arrayOne.splice(1, 2, 9, 9));
 // console.log(arrayOne);
-const arrr45 = [23, 23];
-const arrr46 = [23, 23];
-const arrr47 = [23, 23];
-console.log(arrayOne.concat(arrayTwo, arrr47, arrr46, arrr45));
+// const arrr45 = [23, 23];
+// const arrr46 = [23, 23];
+// const arrr47 = [23, 23];
+// console.log(arrayOne.concat(arrayTwo, arrr47, arrr46, arrr45));
+// console.log( [1, 2, 3, 4].join('+'));
