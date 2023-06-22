@@ -632,7 +632,7 @@ rest.set(true, true);
 console.log(rest);
 
 //Map iteration
-
+console.log('map');
 const question = new Map([
   //i pos is key 2 pos is value
   ['Qeation', 'What is the best programming language'],
@@ -646,6 +646,7 @@ const question = new Map([
 console.log('Hello', question);
 
 // covert object to map
+console.log('hello');
 console.log(Object.entries(openingHours));
 
 const openhour = new Map(Object.entries(openingHours));
@@ -686,6 +687,7 @@ console.log([...question.values()]);
 
 //  String in javaScript
 
+console.log('String');
 const airline = 'Indiogio of india';
 const plane = 'A320';
 
@@ -822,7 +824,8 @@ CapitalizationName('abhishek Bhuyna');
 // padding a String
 
 const msg = 'Go to Gate 23';
-console.log(msg.padStart(24, '+').padEnd('35', '+'));
+
+console.log(msg.padStart(10, '+').padEnd('10', '+'));
 console.log('Abhi'.padStart(24, '+').padEnd('35', '+'));
 
 //case study life example

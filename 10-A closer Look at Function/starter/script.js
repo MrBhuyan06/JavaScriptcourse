@@ -190,15 +190,15 @@
 // //bind method
 // const airBrazil = {
 //   airline: 'airBrazil',
-//   alcode: 'AB',
+//   alcode: 'AB',                   
 //   Booking: [],
 // };
-// // const airBrazilBook = book.bind(airBrazil, 23);
-// // console.log(airBrazilBook);
-// // airBrazilBook('subham');
-// // console.log(airBrazil.Booking);
-// //practial Appication
-// //this mean  pass one argument to the function call before the the atcul
+// const airBrazilBook = book.bind(airBrazil, 23);
+// console.log(airBrazilBook);
+// airBrazilBook('subham');
+// console.log(airBrazil.Booking);
+//practial Appication
+//this mean  pass one argument to the function call before the the atcul
 // // call made
 
 // //Passing all the parameter in the bind method

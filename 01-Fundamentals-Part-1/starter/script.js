@@ -1,7 +1,7 @@
 const a = [1, 4, 8, 9];
 console.log(a);
 a[0] = 4;
-a = [3, 7, 9];
+// a = [3, 7, 9];
 
 console.log(a);
 
@@ -19,6 +19,7 @@ console.log("22" - 22);
 // console.log(firstName);
 myname = "Abhihske";
 console.log(myname);
+console.log(window);
 
 // // convaction  and rule to Declar a variable
 // /**
@@ -218,6 +219,7 @@ console.log("20" / "2");
 // // truthy and falsy value
 
 // // js there is 5 fasly value 0,'',undefine, null, NaN
+console.log("true and false");
 console.log("hello");
 console.log(Boolean(0));
 console.log(0);
