@@ -203,6 +203,18 @@ btnClose.addEventListener('click', e => {
   inputCloseUsername.value = inputClosePin.value = '';
 });
 
+btnLoan.addEventListener('click', e => {
+  e.preventDefault();
+  const loanAmount = Number(inputLoanAmount.value);
+  if (
+    loanAmount > 0 &&
+    currentAccount.movements.some(mov => mov >= loanAmount * 0.1)
+  ) {
+    currentAccount.movements.push(loanAmount);
+    updateUI(currentAccount);
+    inputLoanAmount.value;
+  }
+});
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -407,3 +419,34 @@ for (const acc of accounts) {
     break;
   }
 }
+
+//some and every
+// some
+console.log(movements);
+//include work as
+console.log(movements.includes(450));
+
+//EVERY
+movements.some(mov => {
+  console.log(mov);
+  return mov > 0;
+});
+// its work with some condition
+//similar as some
+//it return true if all the element statisfied the condition
+
+console.log(movements.every(mov => mov > 0));
+console.log(account4.movements.every(mov => mov > 0));
+
+//callBack Function
+//separate callBack
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit));
+console.log(movements.every(deposit));
+console.log(movements.filter(deposit));
+
+//flat
+//ES2019
+//remove all the nested arrya and flated the array
+const arrr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(arrr.flat());
