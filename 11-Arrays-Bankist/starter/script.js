@@ -448,5 +448,31 @@ console.log(movements.filter(deposit));
 //flat
 //ES2019
 //remove all the nested arrya and flated the array
+//deafult nested level1
 const arrr = [[1, 2, 3], [4, 5, 6], 7, 8];
 console.log(arrr.flat());
+
+const arrDeep = [[[1, 2], 3], [4, 5, [6, 7]], 8, 9];
+console.log(arrDeep.flat(2));
+
+//
+const accMovements = accounts.map(acc => acc.movements);
+console.log(accMovements);
+
+const AllMovements = accMovements.flat();
+console.log(AllMovements);
+const overBAlance = AllMovements.reduce((acc, mov) => acc + mov);
+console.log(overBAlance);
+const overBAlance2 = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov);
+console.log(overBAlance2);
+
+// flatMap
+// flat+map
+const overBAlance3 = accounts
+  .flatMap(acc => acc.movements)
+
+  .reduce((acc, mov) => acc + mov);
+console.log(overBAlance2);
