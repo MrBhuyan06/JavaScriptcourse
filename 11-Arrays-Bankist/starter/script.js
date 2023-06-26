@@ -74,7 +74,7 @@ const displayMovements = function (movement, sort = false) {
       i + 1
     } ${type}</div>
      <div class="movements__date">3 days ago</div>
-     <div class="movements__value">${mov}</div>
+     <div class="movements__value">${mov}USD</div>
    </div>
      `;
     containerMovements.insertAdjacentHTML('afterbegin', html);
@@ -511,8 +511,8 @@ console.log(movements.sort());
 //   }
 // });
 
-movements.sort((a, b) => a - b);
-console.log(movements);
+// movements.sort((a, b) => a - b);
+// console.log(movements);
 // /decending
 // movements.sort((a, b) => {
 //   console.log(a, b);
@@ -523,6 +523,47 @@ console.log(movements);
 //     return 1;
 //   }
 // });
-movements.sort((a, b) => b - a);
+// movements.sort((a, b) => b - a);
 
-console.log(movements);
+// console.log(movements);
+const testSortedArray = [9, 3, 423, 43, 212, 232];
+testSortedArray.sort((a, b) => b - a);
+console.log(testSortedArray);
+
+// Array Creation
+console.log([1, 2, 3, 4, 54]);
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+//creating array Programatically
+const x = new Array(7);
+//create the empty argumen  of that  length
+console.log(x);
+
+console.log(x.map(() => 5));
+
+//one method is can be callled upon this empty array
+
+// x.fill(1);
+// console.log(x);
+// x.fill(1, 3);
+// console.log(x);
+x.fill(1, 3, 5);
+console.log(x);
+
+testSortedArray.fill(23, 2, 6);
+console.log(testSortedArray);
+
+// From
+
+// const movementsUI=Array.from(document.querySelectorAll('.movements_value').length)
+
+labelBalance.addEventListener('click', () => {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    ele => Number(ele.textContent.replace('USD', ' '))
+  );
+  console.log(movementsUI);
+});
+
+const arayFrom = Array.from({ length: 7 }, (_, i) => i + 1);
+console.log(arayFrom);
