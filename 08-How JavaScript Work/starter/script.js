@@ -262,3 +262,19 @@
 
 // console.log('Before Marriage', smriti2);
 // console.log('After Marriage', smritiCopy);
+
+//this key word
+
+// ExAMPLE OF THIS
+// 1. in simple function
+//function expression
+const funExpr = function () {
+  console.log('Function Expression', this);
+};
+
+funExpr();
+//funnction declaration
+function funDec() {
+  console.log('function Declaration', this);
+}
+funDec();
