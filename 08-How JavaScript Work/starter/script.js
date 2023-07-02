@@ -278,3 +278,5 @@ function funDec() {
   console.log('function Declaration', this);
 }
 funDec();
+
+console.log(this);
