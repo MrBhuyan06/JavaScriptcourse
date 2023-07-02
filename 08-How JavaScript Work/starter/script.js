@@ -302,3 +302,7 @@ const ObjMethods = {
 ObjMethods.printName();
 ObjMethods.printNameNew();
 ObjMethods.prindNameArrow();
+
+//in normal function all means the funExpression and function declartion
+// this is belong to window without strict mode and with strict mode this is beliong to undefine
+//in arrow function this is belong to the hexical parent of the function
