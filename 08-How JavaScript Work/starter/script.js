@@ -270,6 +270,11 @@
 //function expression
 const funExpr = function () {
   console.log('Function Expression', this);
+
+  const arrowFunctionInside = () =>
+    console.log('this is insidefunExpres', this);
+
+  arrowFunctionInside();
 };
 
 funExpr();
@@ -280,3 +285,20 @@ function funDec() {
 funDec();
 
 console.log(this);
+
+const ObjMethods = {
+  name: 'Abhihske',
+  printName: function () {
+    console.log('FunctionExpression Methods', this.name);
+  },
+  printNameNew() {
+    console.log('FunctionExpressionNew Methods', this.name);
+  },
+  prindNameArrow: () => {
+    console.log('FunctionArrow', this);
+  },
+};
+
+ObjMethods.printName();
+ObjMethods.printNameNew();
+ObjMethods.prindNameArrow();
