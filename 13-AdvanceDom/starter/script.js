@@ -37,6 +37,7 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+//LERN MORE SECTION CODE
 btnScrollTo.addEventListener('click', e => {
   const S1cords = section1.getBoundingClientRect();
   console.log(S1cords);
@@ -56,41 +57,31 @@ btnScrollTo.addEventListener('click', e => {
   section1.scrollIntoView({ behavior: 'smooth' });
 });
 
-///Event propagation
-const randomIntGen = function (min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-const randomColor = () => {
-  return `rgb(${randomIntGen(0, 255)},${randomIntGen(0, 255)},${randomIntGen(
-    0,
-    255
-  )})`;
-};
+//EVENT DELEGATION
+//smooth scroll
+//pageNavigation
+// document.querySelectorAll('.nav__link').forEach(function (e) {
+//   e.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute('href');
+//     console.log(id);
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   });
+// });
 
-const rgb = randomColor();
-console.log(rgb);
-
-document.querySelector('.nav__link').addEventListener('click', function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log(e.target);
-  //stop Proppagation
-  // e.stopPropagation();
-});
+//do using event delegation
+//1.need to mark the common parent or add event to the common parent
+//2.determine what element originated the event
 document.querySelector('.nav__links').addEventListener('click', function (e) {
-  this.style.color = randomColor();
   console.log(e.target);
-  console.log(e.currentTarget === this);
+
+  //Matching strategey
+  if (e.target.classList.contains('nav__links')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
 });
-document.querySelector('.nav').addEventListener(
-  'click',
-  function (e) {
-    this.style.backgroundColor = randomColor();
-    console.log('nav');
-    console.log(e.target);
-    console.log(e.currentTarget);
-  },
-  true
-);
+
 //TABBED COMPNENTS
 tabsContainer.addEventListener('click', function (e) {
   // console.log(e.currentTarget);
@@ -111,6 +102,41 @@ tabsContainer.addEventListener('click', function (e) {
     .classList.add('operations__content--active');
 });
 
+///Event propagation
+// const randomIntGen = function (min, max) {
+//   return Math.floor(Math.random() * (max - min + 1) + min);
+// };
+// const randomColor = () => {
+//   return `rgb(${randomIntGen(0, 255)},${randomIntGen(0, 255)},${randomIntGen(
+//     0,
+//     255
+//   )})`;
+// };
+
+// const rgb = randomColor();
+// console.log(rgb);
+
+// document.querySelector('.nav__link').addEventListener('click', function (e) {
+//   this.style.backgroundColor = randomColor();
+//   console.log(e.target);
+//   //stop Proppagation
+//   // e.stopPropagation();
+// });
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//   this.style.color = randomColor();
+//   console.log(e.target);
+//   console.log(e.currentTarget === this);
+// });
+// document.querySelector('.nav').addEventListener(
+//   'click',
+//   function (e) {
+//     this.style.backgroundColor = randomColor();
+//     console.log('nav');
+//     console.log(e.target);
+//     console.log(e.currentTarget);
+//   },
+//   true
+// );
 //dOM TRAVERSING
 // const h1 = document.querySelector('h1');
 
