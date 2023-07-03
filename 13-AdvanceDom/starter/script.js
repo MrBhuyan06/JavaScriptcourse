@@ -91,3 +91,54 @@ document.querySelector('.nav').addEventListener(
   },
   true
 );
+//TABBED COMPNENTS
+tabsContainer.addEventListener('click', function (e) {
+  // console.log(e.currentTarget);
+  // console.log(e.target);
+  const clicked = e.target.closest('.operations__tab');
+  console.log(clicked);
+  //GUard clause
+  if (!clicked) return;
+  //remove Active classes
+  tabs.forEach(t => t.classList.remove('operations__tab--active'));
+  tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+
+  // Activate content area
+  clicked.classList.add('operations__tab--active');
+  console.log(clicked.dataset.tab);
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add('operations__content--active');
+});
+
+//dOM TRAVERSING
+// const h1 = document.querySelector('h1');
+
+// // going downward child
+// console.log(h1.querySelectorAll('.highlight'));
+
+// console.log(h1.childNodes);
+// console.log(h1.children); //direct child
+// h1.firstElementChild.style.color = 'red';
+// h1.lastElementChild.style.color = 'orangered';
+
+// //going upwards : parent
+// console.log(h1.parentNode);
+// console.log(h1.parentElement);
+
+// h1.closest('h1').style.background = 'var(--color-primary)';
+
+// //going side ways: siblings
+// //we can now acces the direct sibling
+// console.log(h1.previousElementSibling);
+// console.log(h1.nextElementSibling);
+
+// console.log(h1.previousSibling);
+// console.log(h1.nextSibling);
+
+// console.log(h1.parentElement.children);
+// [...h1.parentElement.children].forEach(e => {
+//   if (e !== h1) {
+//     e.style.transform = 'scale(0.5)';
+//   }
+// });
