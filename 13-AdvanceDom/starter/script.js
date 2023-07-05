@@ -103,40 +103,36 @@ tabsContainer.addEventListener('click', function (e) {
 });
 
 ///Event propagation
-// const randomIntGen = function (min, max) {
-//   return Math.floor(Math.random() * (max - min + 1) + min);
-// };
-// const randomColor = () => {
-//   return `rgb(${randomIntGen(0, 255)},${randomIntGen(0, 255)},${randomIntGen(
-//     0,
-//     255
-//   )})`;
-// };
+const randomIntGen = function (min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+};
+const randomColor = () => {
+  return `rgb(${randomIntGen(0, 255)},${randomIntGen(0, 255)},${randomIntGen(
+    0,
+    255
+  )})`;
+};
 
-// const rgb = randomColor();
-// console.log(rgb);
+const rgb = randomColor();
+console.log(rgb);
 
-// document.querySelector('.nav__link').addEventListener('click', function (e) {
-//   this.style.backgroundColor = randomColor();
-//   console.log(e.target);
-//   //stop Proppagation
-//   // e.stopPropagation();
-// });
-// document.querySelector('.nav__links').addEventListener('click', function (e) {
-//   this.style.color = randomColor();
-//   console.log(e.target);
-//   console.log(e.currentTarget === this);
-// });
-// document.querySelector('.nav').addEventListener(
-//   'click',
-//   function (e) {
-//     this.style.backgroundColor = randomColor();
-//     console.log('nav');
-//     console.log(e.target);
-//     console.log(e.currentTarget);
-//   },
-//   true
-// );
+document.querySelector('.nav__link').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log(e.target);
+  //stop Proppagation
+  e.stopPropagation();
+});
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  this.style.color = randomColor();
+  console.log(e.target);
+  console.log(e.currentTarget === this);
+});
+document.querySelector('.nav').addEventListener('click', function (e) {
+  this.style.backgroundColor = randomColor();
+  console.log('nav');
+  console.log(e.target);
+  console.log(e.currentTarget);
+});
 //dOM TRAVERSING
 // const h1 = document.querySelector('h1');
 

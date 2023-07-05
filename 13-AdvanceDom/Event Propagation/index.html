@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Propagation</title>
+    <style>
+      header {
+        width: 80%;
+        border: 1px solid #1f1f1f;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: end;
+        margin-inline: auto;
+        text-align: center;
+        cursor: pointer;
+      }
+      ul {
+        display: flex;
+        border: 1px solid #8a3b3b;
+        border-radius: 1rem;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      li {
+        border: 1px solid hsl(205, 36%, 38%);
+        border-radius: 1rem;
+        padding: 1rem;
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+   <header>
+    <ul>
+        parent
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+      </ul>
+   </header>
+    
+  </body>
+      
+    <script src="./script.js"></script>
+  </body>
+</html>
