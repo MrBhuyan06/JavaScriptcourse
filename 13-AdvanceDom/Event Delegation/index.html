@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events</title>
+    <style>
+      .conatiner {
+        width: 50%;
+        height: 320px;
+        background: linear-gradient(to top, #eff54d, #00ac61);
+        color: #fff;
+        border-radius: 10px;
+        margin-inline: auto;
+        /* display: flex; */
+      }
+      .parent-container {
+        width: 50%;
+        margin-inline: auto;
+        margin-top: 1rem;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        /* border: 1px solid red; */
+      }
+      .btn1,
+      .btn2,
+      .btn3 {
+        padding-inline: 1rem 1rem;
+        background: linear-gradient(to right, #fed54a, #ff9347);
+        border-radius: 1rem;
+        cursor: pointer;
+        margin-left: 0.5rem;
+        border: none;
+        transition: all 0.5s ease;
+      }
+
+      .para {
+        width: 50%;
+        margin-inline: auto;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conatiner">
+      <div class="parent-container">
+        <button class="btn1" id="box1">Click Me</button>
+        <button class="btn2" id="box2">Click Me</button>
+        <button class="btn3" id="box3">Click Me</button>
+      </div>
+      <p class="para">Dis</p>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

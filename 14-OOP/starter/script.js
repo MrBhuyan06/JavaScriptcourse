@@ -55,4 +55,36 @@ Array.prototype.uinque = function () {
 console.log(arr.uinque());
 
 const h1 = document.querySelector('h1');
+console.log(h1.__proto__.__proto__);
 console.dir(x => x + 1);
+
+//practice
+const Student = function (name, reg) {
+  this.name = name;
+  this.reg = reg;
+};
+
+const Abhi = new Student('Abhishek', 210720100102);
+console.log(Abhi);
+const Gudus = new Student('Gudu', 210720100100);
+Student.prototype.details = function () {
+  console.log(`Hi ${this.name} and your reg is ${this.reg}`);
+};
+
+Abhi.details();
+Gudus.details();
+console.log(Abhi instanceof Student);
+console.log(Abhi.__proto__ === Student.prototype);
+// console.log(Abhi.hasOwnProperty('details'));
+console.dir(Student.prototype.isPrototypeOf(Abhi));
+
+// console.log(Array.prototype.__proto__.__proto__);
+Array.prototype.displayName = function (name) {
+  console.log('Your Name is', name);
+};
+
+const arrs = [2, 32, 31244, 321, 32];
+console.log(arrs.__proto__.__proto__.__proto__);
+//Make a arrs in the Array in the
+
+arr.displayName('Abhi');
