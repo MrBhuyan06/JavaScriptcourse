@@ -567,3 +567,15 @@ labelBalance.addEventListener('click', () => {
 
 const arayFrom = Array.from({ length: 7 }, (_, i) => i + 1);
 console.log(arayFrom);
+
+const namdss = [1, 23, 454, 56, 644, 65];
+console.log(namdss.splice(2, 3, 89, 90));
+console.log(namdss);
+console.log(namdss.unshift(1));
+console.log(namdss);
+
+const strr = '1234';
+console.log(strr.slice(2));
+console.log(strr);
+
+

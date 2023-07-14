@@ -125,3 +125,37 @@ bmw.accelerate();
 bmw.accelerate();
 bmw.brake();
 bmw.accelerate();
+
+//ES Classes
+
+//class Expression
+//class are other type of function that way we have class decl and class exp
+
+const PersonCl = class {};
+
+class PersonClass {
+  constructor(name, birthYear) {
+    this.name = name;
+    this.birthYear = 2000;
+  }
+  //Methods Will be added to .prototypes property
+  calcAge() {
+    console.log(2000 - this.birthYear);
+  }
+}
+
+const Abhu = new PersonClass('bhuyan', 2000);
+console.log(Abhu.name);
+console.log(Abhu.birthYear);
+console.log(Abhu.__proto__);
+console.log(PersonClass.prototype.__proto__);
+console.log((Abhu.__proto__ = PersonClass.prototype));
+PersonClass.prototype.greet = function () {
+  console.log(`Hey ${this.name}`);
+};
+Abhu.greet();
+
+//importance
+//classes are not hoisted even they are class declaration
+//classes first citizen mean pass them in to function and retutn from functionwhy suuch classes are special function behind the scene
+//classes are executed in stict mode
