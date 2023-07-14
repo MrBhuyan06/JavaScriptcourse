@@ -5,16 +5,25 @@ const Person = function (firstName, birthYear) {
   //instance prototype
   this.firstName = firstName;
   this.birthYear = birthYear;
-  //never create the methods inside of a constructor function
-  //   this.calcAge = function () {
-  //     console.log(2037 - this.birthYear);
-  //   };
+  // never create the methods inside of a constructor function
+  this.calcAge = function () {
+    return 2037 - this.birthYear;
+  };
 };
 const Abhishek = new Person('Abhihske', 2000);
 console.log(Abhishek);
+console.log(Abhishek.birthYear);
+console.log(Abhishek.calcAge());
 const Gudu = new Person('gudu', 2001);
 console.log(Gudu);
 console.log(Abhishek instanceof Person);
+
+Person.hey = function () {
+  console.log('hey there❤️');
+  console.log(this);
+};
+Person.hey();
+// Abhishek.hey();
 
 //1.New empty obj is created
 //2. function is called, this={is set to newly created obj}
@@ -154,6 +163,11 @@ class PersonClass {
       alert('The given is not a full Name');
     }
   }
+  //static method
+  static hey() {
+    console.log('hey There');
+    console.log(this);
+  }
   get fullName() {
     return this._fullName;
   }
@@ -174,6 +188,7 @@ PersonClass.prototype.greet = function () {
 };
 Abhu.greet();
 console.log(Abhu.age);
+PersonClass.hey();
 
 //importance
 //classes are not hoisted even they are class declaration
@@ -195,3 +210,4 @@ const account = {
 console.log(account.latest);
 account.latest = 50;
 console.log(account.movement);
+//static methods
