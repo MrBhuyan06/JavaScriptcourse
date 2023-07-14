@@ -131,20 +131,39 @@ bmw.accelerate();
 //class Expression
 //class are other type of function that way we have class decl and class exp
 
-const PersonCl = class {};
+// const PersonCl = class {};
 
 class PersonClass {
-  constructor(name, birthYear) {
-    this.name = name;
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
     this.birthYear = 2000;
   }
   //Methods Will be added to .prototypes property
   calcAge() {
     console.log(2000 - this.birthYear);
   }
+  //It will also getinto the prototype obj
+  get age() {
+    return 2000 - this.birthYear;
+  }
+  // set a property that already exists
+  set fullName(name) {
+    if (name.includes(' ')) {
+      this._fullName = name;
+    } else {
+      alert('The given is not a full Name');
+    }
+  }
+  get fullName() {
+    return this._fullName;
+  }
 }
 
-const Abhu = new PersonClass('bhuyan', 2000);
+const smriti = new PersonClass('smriti Pradhan', 2001);
+console.log(smriti);
+console.log(smriti.fullName);
+
+const Abhu = new PersonClass('Abhishek Bhuyan', 2000);
 console.log(Abhu.name);
 console.log(Abhu.birthYear);
 console.log(Abhu.__proto__);
@@ -154,8 +173,25 @@ PersonClass.prototype.greet = function () {
   console.log(`Hey ${this.name}`);
 };
 Abhu.greet();
+console.log(Abhu.age);
 
 //importance
 //classes are not hoisted even they are class declaration
 //classes first citizen mean pass them in to function and retutn from functionwhy suuch classes are special function behind the scene
 //classes are executed in stict mode
+
+//setter and Getter
+
+const account = {
+  owner: 'Abhishek',
+  movement: [200, 530, 120, 300],
+  get latest() {
+    return this.movement.slice(-1).pop();
+  },
+  set latest(mov) {
+    this.movement.push(mov);
+  },
+};
+console.log(account.latest);
+account.latest = 50;
+console.log(account.movement);
