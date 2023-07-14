@@ -211,3 +211,16 @@ console.log(account.latest);
 account.latest = 50;
 console.log(account.movement);
 //static methods
+//Third way Object .create
+// Object.create
+
+const PersonProto = {
+  calcAge() {
+    console.log(2023 - this.birthYear);
+  },
+};
+const ABHII = Object.create(PersonProto);
+console.log(ABHII);
+ABHII.name = 'Abhihske';
+ABHII.birthYear = 2002;
+ABHII.calcAge();
