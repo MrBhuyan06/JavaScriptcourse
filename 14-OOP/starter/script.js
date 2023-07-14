@@ -218,9 +218,18 @@ const PersonProto = {
   calcAge() {
     console.log(2023 - this.birthYear);
   },
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
 };
 const ABHII = Object.create(PersonProto);
 console.log(ABHII);
 ABHII.name = 'Abhihske';
 ABHII.birthYear = 2002;
 ABHII.calcAge();
+
+console.log(ABHII.__proto__ === PersonProto);
+const SMRITI = Object.create(PersonProto);
+SMRITI.init('smriti', 2000);
+SMRITI.calcAge();
