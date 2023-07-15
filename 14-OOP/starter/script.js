@@ -329,3 +329,27 @@ const martha = new Student('Mrtha jones', 2000, 'cs');
 martha.introduce();
 martha.calcAge();
 martha.birthYear;
+
+//inheritance uisng Object.create
+const PersonProto = {
+  calcAge() {
+    console.log(2023 - this.birthYear);
+  },
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+const steven = Object.create(PersonProto);
+const StudentProto = Object.create(PersonProto);
+StudentProto.init = function (fullName, birthYear, course) {
+  PersonProto.init.call(this, fullName, birthYear);
+  this.course = course;
+};
+StudentProto.introduces = function () {
+  console.log(`My Name is ${this.fullName} and I study ${this.course}`);
+};
+const jay = Object.create(StudentProto);
+jay.init('Abhi', 2000, 'cs');
+jay.calcAge();
+jay.introduces();
