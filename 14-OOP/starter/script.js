@@ -234,41 +234,98 @@
 // SMRITI.init('smriti', 2000);
 // SMRITI.calcAge();
 
-//inheritances
-const Person = function (firstName, birthYear) {
-  this.firstName = firstName;
-  this.birthYear = birthYear;
-};
+//inheritances in cons Function
+// const Person = function (firstName, birthYear) {
+//   this.firstName = firstName;
+//   this.birthYear = birthYear;
+// };
 
-Person.prototype.calcAge = function () {
-  console.log(2023 - this.birthYear);
-};
+// Person.prototype.calcAge = function () {
+//   console.log(2023 - this.birthYear);
+// };
 
-const Student = function (firstName, birthYear, course) {
-  // this.firstName = firstName;
-  // this.birthYear = birthYear;
-  Person.call(this, firstName, birthYear);
-  this.course = course;
-};
+// const Student = function (firstName, birthYear, course) {
+//   // this.firstName = firstName;
+//   // this.birthYear = birthYear;
+//   Person.call(this, firstName, birthYear);
+//   this.course = course;
+// };
 
-Student.prototype = Object.create(Person.prototype);
+// Student.prototype = Object.create(Person.prototype);
 
-console.log(Student.prototype);
-Student.prototype.introduce = function () {
-  console.log(`My Name is ${this.firstName} and I study ${this.course}`);
-};
+// console.log(Student.prototype);
+// Student.prototype.introduce = function () {
+//   console.log(`My Name is ${this.firstName} and I study ${this.course}`);
+// };
 
-const mike = new Student('Abhihske', 2020, 'cs');
-console.log(mike);
-console.log(mike.__proto__);
-console.log(mike.introduce);
-mike.calcAge();
-Student.prototype.constructor = Student;
-console.dir(Student.prototype.constructor);
+// const mike = new Student('Abhihske', 2020, 'cs');
+// console.log(mike);
+// console.log(mike.__proto__);
+// console.log(mike.introduce);
+// mike.calcAge();
+// Student.prototype.constructor = Student;
+// console.dir(Student.prototype.constructor);
 
-//protoType chaining
-console.log(mike instanceof Student);
-console.log(mike instanceof Person);
-console.log(mike instanceof Object);
+// //protoType chaining
+// console.log(mike instanceof Student);
+// console.log(mike instanceof Person);
+// console.log(mike instanceof Object);
 
 //Inheritances in class
+
+class PersonClass {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = 2000;
+  }
+  //Methods Will be added to .prototypes property
+  calcAge() {
+    console.log(2023 - this.birthYear);
+  }
+  //It will also getinto the prototype obj
+  get age() {
+    return 2000 - this.birthYear;
+  }
+  // set a property that already exists
+  set fullName(name) {
+    if (name.includes(' ')) {
+      this._fullName = name;
+    } else {
+      alert('The given is not a full Name');
+    }
+  }
+  //static method
+  static hey() {
+    console.log('hey There');
+    console.log(this);
+  }
+  get fullName() {
+    return this._fullName;
+  }
+}
+
+class Student extends PersonClass {
+  constructor(fullName, birthYear, course) {
+    //person.call(this,firstName,birthyear)
+    //need to happen first
+    //because it called to the super which is responsible for creating the this keyword in this subclass
+    super(fullName, birthYear);
+    this.course = course;
+  }
+  introduce() {
+    console.log(`My Name is ${this.fullName} and I study ${this.course}`);
+  }
+  calcAge() {
+    console.log(
+      `I am ${
+        2037 - this.birthYear
+      } year Olds but as a student i feel more like`
+    );
+  }
+}
+
+// const martha= new Student("Mrtha jones", 2002)
+const martha = new Student('Mrtha jones', 2000, 'cs');
+martha.introduce();
+martha.calcAge();
+martha.birthYear;
