@@ -356,34 +356,47 @@ jay.introduces();
 
 //class examples
 class Account {
+  //1)public field (instances)
+  local = navigator.language;
+
+  // 2private
+  #movements = [];
+  #pin;
+
   constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
-    this._pin = pin;
+    this.#pin = pin;
     //protected property
-    this._movements = [];
-    this.local = navigator.language;
+    // this._movements = [];
+    // this.local = navigator.language;
     console.log(`Thanks for Opening an account ${owner}`);
   }
   //interface of an object or an api 0r public interface of an object
+
   getMovement() {
-    return this._movements;
+    return this.#movements;
   }
 
+  //public methods
   deposit(val) {
-    this.movements.push(val);
+    this.#movements.push(val);
+    return this;
   }
   withdraw(val) {
     this.deposit(-val);
+    return this;
   }
-  _approveLoan(val) {
-    return true;
-  }
-  _requestLoan(val) {
-    if (this.approveLoan) {
+  requestLoan(val) {
+    if (this.#approveLoan) {
       this.deposit(val);
       console.log('Loan Approved');
     }
+    return this;
+  }
+  // private methods
+  #approveLoan(val) {
+    return true;
   }
 }
 const acc1 = new Account('Abhi', 'IND', 1111);
@@ -392,7 +405,19 @@ const acc1 = new Account('Abhi', 'IND', 1111);
 // acc1._movements.push(-140);
 acc1.deposit(250);
 acc1.withdraw(140);
-acc1.requestLoan(100);
-acc1.approveLoan(100);
+
 console.log(acc1);
-console.log(acc1.pin);
+// console.log(acc1.pin);
+console.log(acc1.getMovement());
+// console.log(acc1.#movements);
+
+//classes fields
+// public
+//privite
+//Public methods
+// PRivate MEthods
+//there is also static version
+
+//chainig Methods
+acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
+console.log(acc1.getMovement());
