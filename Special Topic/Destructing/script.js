@@ -231,3 +231,8 @@ const carData = [
   },
 ];
 console.log(carData[0].data.model.modeltype ?? 'model has no type');
+
+const user = {
+  name: 'John Doe',
+  age: 30,
+};
