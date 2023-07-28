@@ -144,35 +144,35 @@
 // greetHey('Abhi');
 
 // // Call and Applay method
-// const airIndia = {
-//   airline: 'airIndiaJet',
-//   alcode: 'AIT',
-//   Booking: [],
-//   book(seatNum, passengerName) {
-//     console.log(
-//       `${passengerName} book a set on ${this.airline} flight ${this.alcode}`
-//     );
-//     this.Booking.push({
-//       flight: `${this.airline}${this.alcode}`,
-//       name: passengerName,
-//     });
-//   },
-// };
-// const airAsisa = {
-//   airline: 'airAsisa',
-//   alcode: 'AS',
-//   Booking: [],
-// };
+const airIndia = {
+  airline: 'airIndiaJet',
+  alcode: 'AIT',
+  Booking: [],
+  book(seatNum, passengerName) {
+    console.log(
+      `${passengerName} book a set on ${this.airline} flight ${this.alcode}`
+    );
+    this.Booking.push({
+      flight: `${this.airline}${this.alcode}`,
+      name: passengerName,
+    });
+  },
+};
+const airAsisa = {
+  airline: 'airAsisa',
+  alcode: 'AS',
+  Booking: [],
+};
 
 // airIndia.book(212, 'Abhishek Bhuyan');
 
-// // Storing the method refrence into individual Variabl
-// const book = airIndia.book;
-// // console.log(book);
+// Storing the method refrence into individual Variabl
+const book = airIndia.book;
+// console.log(book);
 
-// //As we know this variable is dyanamic this value is basically depends how the function is called as here this is just a normal function call so in normal function call this is belong to the undefine as strict mode
-// // book(2121, 'Smriti Pradhan');
-// // So what we can do for this
+// As we know this variable is dyanamic this value is basically depends how the function is called as here this is just a normal function call so in normal function call this is belong to the undefine as strict mode
+// book(2121, 'Smriti Pradhan');
+// So what we can do for this
 
 // book.call(airAsisa, 212, 'Smriti Pradhan');
 
@@ -188,14 +188,15 @@
 // book.call(airAsisa, ...callArgument);
 
 // //bind method
-// const airBrazil = {
-//   airline: 'airBrazil',
-//   alcode: 'AB',                   
-//   Booking: [],
-// };
-// const airBrazilBook = book.bind(airBrazil, 23);
-// console.log(airBrazilBook);
-// airBrazilBook('subham');
+const airBrazil = {
+  airline: 'airBrazil',
+  alcode: 'AB',
+  Booking: [],
+};
+const airBrazilBook = book.bind(airBrazil, 23);
+console.log(airBrazilBook);
+airBrazilBook('subham');
+console.log(airBrazil);
 // console.log(airBrazil.Booking);
 //practial Appication
 //this mean  pass one argument to the function call before the the atcul
