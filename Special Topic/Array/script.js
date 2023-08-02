@@ -62,6 +62,7 @@ const students = [
 ];
 
 // print all male student
+console.log("Print all male student");
 
 let maleStudentData = students.filter((student) => {
   return student.gender.includes("Male");
@@ -70,3 +71,25 @@ let maleStudentData = students.filter((student) => {
 maleStudentData.forEach((students) => {
   console.log(students);
 });
+console.log("------------------------------");
+// print all Female student
+console.log("Print all female student");
+
+let femaleStudentData = students.filter((student) => {
+  return student.gender.includes("Female");
+});
+// console.log(maleStudentData);
+femaleStudentData.forEach((students) => {
+  console.log(students);
+});
+console.log("------------------------------");
+
+//PRINT STUDENT NAME ONLY
+console.log("Print Male student name");
+
+students.forEach((student) => {
+  if (student.gender.includes("Male")) {
+    console.log(student.studentname);
+  }
+});
+//print all student details elible for vote
