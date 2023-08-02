@@ -111,3 +111,37 @@ students.forEach((student) => {
   }
 });
 console.log("------------------------------");
+
+//find  the largest number in an array
+
+let arry = [23, 12, 32, 1, 43, 12, 2, 3];
+let larget = arry[0];
+arry.forEach((ele, i) => {
+  if (arry[i] > larget) {
+    larget = ele;
+  }
+});
+console.log("The largest is larget", larget);
+
+console.log("------------------------------");
+console.log("Smallest number");
+
+let arrySmall = [23, 12, 32, 1, 43, 12, 2, 3];
+let small = arrySmall[0];
+arry.forEach((ele, i) => {
+  // console.log(arrySmall[i + 1]);
+  if (arrySmall[i + 1] < small) {
+    small = ele;
+  }
+});
+console.log("The largest is larget", small);
+console.log("-------------------");
+
+console.log("Array sorting");
+let sortarry = [2, 34, 43, 12, 1, 6];
+let tarnsformsortedArray = sortarry.sort((a, b) => b - a).map((ele) => ele * 7);
+console.log(tarnsformsortedArray);
+console.log("-------------------");
+let arrayDivide = [10, 20, 9, 13, 21, 29, -10];
+let newArray = arrayDivide.filter((ele) => ele % 3 === 0).reverse();
+console.log(newArray);
