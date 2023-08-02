@@ -92,4 +92,22 @@ students.forEach((student) => {
     console.log(student.studentname);
   }
 });
+console.log("------------------------------");
 //print all student details elible for vote
+console.log("Print Elible vote  student ");
+
+students.forEach((student) => {
+  if (student.age >= 18) {
+    console.log(` This Student is Eligible for Vote ${student.studentname}`);
+  }
+});
+console.log("------------------------------");
+//print all student id  elible for vote
+console.log("Print student id Elible vote  student ");
+
+students.forEach((student) => {
+  if (student.age >= 18) {
+    console.log(` This Student is Eligible for Vote Id is  ${student.id}`);
+  }
+});
+console.log("------------------------------");
