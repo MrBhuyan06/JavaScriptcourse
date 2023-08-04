@@ -61,12 +61,12 @@
 //   },
 // ];
 
-let deposite = [121, 2321, 3234, 1200, 321];
-let res = deposite.some((deposite, inndex) => {
-  console.log(inndex);
-  return deposite > 1000;
-});
-console.log(res);
+// let deposite = [121, 2321, 3234, 1200, 321];
+// let res = deposite.some((deposite, inndex) => {
+//   console.log(inndex);
+//   return deposite > 1000;
+// });
+// console.log(res);
 
 // // print all male student
 // console.log("Print all male student");
@@ -166,7 +166,7 @@ console.log(res);
 // console.log("new Arry", newArry);
 // console.log("ariginalArray", arr);
 
-let arrSmallest = [23, 21, 32, 21, 1, 22, 0, 29, -3, -1];
+// let arrSmallest = [23, 21, 32, 21, 1, 22, 0, 29, -3, -1];
 
 // let smallest = arrSmallest.reduce((acc, ele) => {
 //   if (ele < acc) {
@@ -176,11 +176,11 @@ let arrSmallest = [23, 21, 32, 21, 1, 22, 0, 29, -3, -1];
 // });
 // console.log(smallest);
 
-let largest = arrSmallest.reduce((acc, ele) => {
-  if (ele > acc) {
-    acc = ele;
-  }
-  return acc;
-});
-console.log(largest);
-console.log(window);
+// let largest = arrSmallest.reduce((acc, ele) => {
+//   if (ele > acc) {
+//     acc = ele;
+//   }
+//   return acc;
+// });
+// console.log(largest);
+// console.log(window);
