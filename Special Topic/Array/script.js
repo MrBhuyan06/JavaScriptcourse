@@ -155,13 +155,23 @@ console.log(res);
 
 //Array methods
 
-let arr = [1, 2, 3, 4, 5, 6, 7, 8];
-console.log(arr.slice(arr.length + 2));
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8];
+// console.log(arr.slice(arr.length + 2));
 //slice
 // no mutate
 // let arrSlice = arr.slice(23);
 // console.log(arrSlice);
 
-let newArry = arr.splice(arr.length);
-console.log("new Arry", newArry);
-console.log("ariginalArray", arr);
+// let newArry = arr.splice(arr.length);
+// console.log("new Arry", newArry);
+// console.log("ariginalArray", arr);
+
+let arrSmallest = [23, 21, 32, 21, 1, 22, 0, 29, -3, -1];
+
+let smallest = arrSmallest.reduce((acc, ele) => {
+  if (ele < acc) {
+    acc = ele;
+  }
+  return acc;
+});
+console.log(smallest);
