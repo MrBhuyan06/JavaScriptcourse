@@ -156,7 +156,7 @@ console.log(res);
 //Array methods
 
 // let arr = [1, 2, 3, 4, 5, 6, 7, 8];
-// console.log(arr.slice(arr.length + 2));
+// co---nsole.log(arr.slice(arr.length + 2));
 //slice
 // no mutate
 // let arrSlice = arr.slice(23);
@@ -168,10 +168,19 @@ console.log(res);
 
 let arrSmallest = [23, 21, 32, 21, 1, 22, 0, 29, -3, -1];
 
-let smallest = arrSmallest.reduce((acc, ele) => {
-  if (ele < acc) {
+// let smallest = arrSmallest.reduce((acc, ele) => {
+//   if (ele < acc) {
+//     acc = ele;
+//   }
+//   return acc;
+// });
+// console.log(smallest);
+
+let largest = arrSmallest.reduce((acc, ele) => {
+  if (ele > acc) {
     acc = ele;
   }
   return acc;
 });
-console.log(smallest);
+console.log(largest);
+console.log(window);
