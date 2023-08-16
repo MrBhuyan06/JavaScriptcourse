@@ -259,3 +259,35 @@
 //   ba = 10;
 // }
 // console.log(this.ba);
+
+// let store={
+//     ip:["ipin,istate,iphne"],
+//     iph:["iphone,iphine,iphnie"],
+//     ipho:["iphone11,ihoneing"],
+//     iphone:["iphone12,iphone13,1phone14"]
+
+// }
+let store = {};
+let data = {
+  ip: ['ipin,istate,iphne'],
+};
+data = {
+  ip: ['ipin,istate,iphne'],
+  iph: ['iphone,iphine,iphnie'],
+  ipho: ['iphone11,ihoneing'],
+  iphone: ['iphone12,iphone13,1phone14'],
+};
+
+store = {
+  ...store,
+  ...data,
+};
+// data = {
+//   ip: ['ipin,istate,iphneioioi'],
+// };
+
+// store = {
+//   ...store,
+//   ...data,
+// };
+console.log(store);
