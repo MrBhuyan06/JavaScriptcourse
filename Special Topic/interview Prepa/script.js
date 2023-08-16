@@ -19,3 +19,9 @@ console.log(add); */
 // }
 
 // console.log(names);
+
+// let age = "23";
+// console.log(age === this.age);
+var age = 23;
+var age = 65;
+console.log(age);
