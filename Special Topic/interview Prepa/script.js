@@ -50,11 +50,20 @@ console.log(add); */
 //   }
 //   y();
 // }
+// function x() {
+//   var a = 10;
+//   return function y() {
+//     console.log(a);
+//   };
+// }
+// let z = x();
+// z();
+
+//closure in setinTime out
 function x() {
   var a = 10;
-  return function y() {
+  setTimeout(() => {
     console.log(a);
-  };
+  }, 3000);
 }
-let z = x();
-z();
+x();
