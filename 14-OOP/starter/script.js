@@ -1,19 +1,19 @@
 'use strict';
 
-// const Person = function (firstName, birthYear) {
-//   //   console.log(this);
-//   //instance prototype
-//   this.firstName = firstName;
-//   this.birthYear = birthYear;
-//   // never create the methods inside of a constructor function
-//   // this.calcAge = function () {
-//   //   return 2037 - this.birthYear;
-//   // };
-// // };
-// const Abhishek = new Person('Abhihske', 2000);
-// console.log(Abhishek);
-// console.log(Abhishek.birthYear);
-// console.log(Abhishek.calcAge());
+const Person = function (firstName, birthYear) {
+  //   console.log(this);
+  //instance prototype
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+  // never create the methods inside of a constructor function
+  // this.calcAge = function () {
+  //   return 2037 - this.birthYear;
+  // };
+// };
+const Abhishek = new Person('Abhihske', 2000);
+console.log(Abhishek);
+console.log(Abhishek.birthYear);
+console.log(Abhishek.calcAge());
 // const Gudu = new Person('gudu', 2001);
 // console.log(Gudu);
 // console.log(Abhishek instanceof Person);
@@ -273,151 +273,151 @@
 
 //Inheritances in class
 
-class PersonClass {
-  constructor(fullName, birthYear) {
-    this.fullName = fullName;
-    this.birthYear = 2000;
-  }
-  //Methods Will be added to .prototypes property
-  calcAge() {
-    console.log(2023 - this.birthYear);
-  }
-  //It will also getinto the prototype obj
-  get age() {
-    return 2000 - this.birthYear;
-  }
-  // set a property that already exists
-  set fullName(name) {
-    if (name.includes(' ')) {
-      this._fullName = name;
-    } else {
-      alert('The given is not a full Name');
-    }
-  }
-  //static method
-  static hey() {
-    console.log('hey There');
-    console.log(this);
-  }
-  get fullName() {
-    return this._fullName;
-  }
-}
+// class PersonClass {
+//   constructor(fullName, birthYear) {
+//     this.fullName = fullName;
+//     this.birthYear = 2000;
+//   }
+//   //Methods Will be added to .prototypes property
+//   calcAge() {
+//     console.log(2023 - this.birthYear);
+//   }
+//   //It will also getinto the prototype obj
+//   get age() {
+//     return 2000 - this.birthYear;
+//   }
+//   // set a property that already exists
+//   set fullName(name) {
+//     if (name.includes(' ')) {
+//       this._fullName = name;
+//     } else {
+//       alert('The given is not a full Name');
+//     }
+//   }
+//   //static method
+//   static hey() {
+//     console.log('hey There');
+//     console.log(this);
+//   }
+//   get fullName() {
+//     return this._fullName;
+//   }
+// }
 
-class Student extends PersonClass {
-  constructor(fullName, birthYear, course) {
-    //person.call(this,firstName,birthyear)
-    //need to happen first
-    //because it called to the super which is responsible for creating the this keyword in this subclass
-    super(fullName, birthYear);
-    this.course = course;
-  }
-  introduce() {
-    console.log(`My Name is ${this.fullName} and I study ${this.course}`);
-  }
-  calcAge() {
-    console.log(
-      `I am ${
-        2037 - this.birthYear
-      } year Olds but as a student i feel more like`
-    );
-  }
-}
+// class Student extends PersonClass {
+//   constructor(fullName, birthYear, course) {
+//     //person.call(this,firstName,birthyear)
+//     //need to happen first
+//     //because it called to the super which is responsible for creating the this keyword in this subclass
+//     super(fullName, birthYear);
+//     this.course = course;
+//   }
+//   introduce() {
+//     console.log(`My Name is ${this.fullName} and I study ${this.course}`);
+//   }
+//   calcAge() {
+//     console.log(
+//       `I am ${
+//         2037 - this.birthYear
+//       } year Olds but as a student i feel more like`
+//     );
+//   }
+// }
 
-// const martha= new Student("Mrtha jones", 2002)
-const martha = new Student('Mrtha jones', 2000, 'cs');
-martha.introduce();
-martha.calcAge();
-martha.birthYear;
+// // const martha= new Student("Mrtha jones", 2002)
+// const martha = new Student('Mrtha jones', 2000, 'cs');
+// martha.introduce();
+// martha.calcAge();
+// martha.birthYear;
 
-//inheritance uisng Object.create
-const PersonProto = {
-  calcAge() {
-    console.log(2023 - this.birthYear);
-  },
-  init(firstName, birthYear) {
-    this.firstName = firstName;
-    this.birthYear = birthYear;
-  },
-};
-const steven = Object.create(PersonProto);
-const StudentProto = Object.create(PersonProto);
-StudentProto.init = function (fullName, birthYear, course) {
-  PersonProto.init.call(this, fullName, birthYear);
-  this.course = course;
-};
-StudentProto.introduces = function () {
-  console.log(`My Name is ${this.fullName} and I study ${this.course}`);
-};
-const jay = Object.create(StudentProto);
-jay.init('Abhi', 2000, 'cs');
-jay.calcAge();
-jay.introduces();
+// //inheritance uisng Object.create
+// const PersonProto = {
+//   calcAge() {
+//     console.log(2023 - this.birthYear);
+//   },
+//   init(firstName, birthYear) {
+//     this.firstName = firstName;
+//     this.birthYear = birthYear;
+//   },
+// };
+// const steven = Object.create(PersonProto);
+// const StudentProto = Object.create(PersonProto);
+// StudentProto.init = function (fullName, birthYear, course) {
+//   PersonProto.init.call(this, fullName, birthYear);
+//   this.course = course;
+// };
+// StudentProto.introduces = function () {
+//   console.log(`My Name is ${this.fullName} and I study ${this.course}`);
+// };
+// const jay = Object.create(StudentProto);
+// jay.init('Abhi', 2000, 'cs');
+// jay.calcAge();
+// jay.introduces();
 
-//class examples
-class Account {
-  //1)public field (instances)
-  local = navigator.language;
+// //class examples
+// class Account {
+//   //1)public field (instances)
+//   local = navigator.language;
 
-  // 2private
-  #movements = [];
-  #pin;
+//   // 2private
+//   #movements = [];
+//   #pin;
 
-  constructor(owner, currency, pin) {
-    this.owner = owner;
-    this.currency = currency;
-    this.#pin = pin;
-    //protected property
-    // this._movements = [];
-    // this.local = navigator.language;
-    console.log(`Thanks for Opening an account ${owner}`);
-  }
-  //interface of an object or an api 0r public interface of an object
+//   constructor(owner, currency, pin) {
+//     this.owner = owner;
+//     this.currency = currency;
+//     this.#pin = pin;
+//     //protected property
+//     // this._movements = [];
+//     // this.local = navigator.language;
+//     console.log(`Thanks for Opening an account ${owner}`);
+//   }
+//   //interface of an object or an api 0r public interface of an object
 
-  getMovement() {
-    return this.#movements;
-  }
+//   getMovement() {
+//     return this.#movements;
+//   }
 
-  //public methods
-  deposit(val) {
-    this.#movements.push(val);
-    return this;
-  }
-  withdraw(val) {
-    this.deposit(-val);
-    return this;
-  }
-  requestLoan(val) {
-    if (this.#approveLoan) {
-      this.deposit(val);
-      console.log('Loan Approved');
-    }
-    return this;
-  }
-  // private methods
-  #approveLoan(val) {
-    return true;
-  }
-}
-const acc1 = new Account('Abhi', 'IND', 1111);
+//   //public methods
+//   deposit(val) {
+//     this.#movements.push(val);
+//     return this;
+//   }
+//   withdraw(val) {
+//     this.deposit(-val);
+//     return this;
+//   }
+//   requestLoan(val) {
+//     if (this.#approveLoan) {
+//       this.deposit(val);
+//       console.log('Loan Approved');
+//     }
+//     return this;
+//   }
+//   // private methods
+//   #approveLoan(val) {
+//     return true;
+//   }
+// }
+// const acc1 = new Account('Abhi', 'IND', 1111);
+// // console.log(acc1);
+// // acc1._movements.push(240);
+// // acc1._movements.push(-140);
+// acc1.deposit(250);
+// acc1.withdraw(140);
+
 // console.log(acc1);
-// acc1._movements.push(240);
-// acc1._movements.push(-140);
-acc1.deposit(250);
-acc1.withdraw(140);
+// // console.log(acc1.pin);
+// console.log(acc1.getMovement());
+// // console.log(acc1.#movements);
 
-console.log(acc1);
-// console.log(acc1.pin);
-console.log(acc1.getMovement());
-// console.log(acc1.#movements);
+// //classes fields
+// // public
+// //privite
+// //Public methods
+// // PRivate MEthods
+// //there is also static version
 
-//classes fields
-// public
-//privite
-//Public methods
-// PRivate MEthods
-//there is also static version
-
-//chainig Methods
-acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
-console.log(acc1.getMovement());
+// //chainig Methods
+// acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
+// console.log(acc1.getMovement());
