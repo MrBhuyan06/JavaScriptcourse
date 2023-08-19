@@ -14,16 +14,16 @@ const Abhishek = new Person('Abhihske', 2000);
 console.log(Abhishek);
 console.log(Abhishek.birthYear);
 console.log(Abhishek.calcAge());
-// const Gudu = new Person('gudu', 2001);
-// console.log(Gudu);
-// console.log(Abhishek instanceof Person);
+const Gudu = new Person('gudu', 2001);
+console.log(Gudu);
+console.log(Abhishek instanceof Person);
 
-// Person.hey = function () {
-//   console.log('hey there❤️');
-//   console.log(this);
-// };
-// Person.hey();
-// Abhishek.hey();
+Person.hey = function () {
+  console.log('hey there❤️');
+  console.log(this);
+};
+Person.hey();
+Abhishek.hey();
 
 //1.New empty obj is created
 //2. function is called, this={is set to newly created obj}
@@ -420,4 +420,4 @@ console.log(Abhishek.calcAge());
 
 // //chainig Methods
 // acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(4000);
-// console.log(acc1.getMovement());
+// console.log(acc1.getMovement())
