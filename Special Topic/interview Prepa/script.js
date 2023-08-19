@@ -93,5 +93,14 @@ Person.hey = function () {
   console.log("hey there❤️");
   console.log(this);
 };
-Gudu.hey();
-Gudu.hey();
+// Gudu.hey();
+
+let arra = [1, 2, 3, 4];
+console.log(arra.splice());
+let newArray = arra.splice(2);
+console.log(newArray);
+console.log(arra);
+// let newArrey = arra.slice();
+// console.log(newArrey);
+// console.log("hello");
+// console.log(arra.slice(23));
