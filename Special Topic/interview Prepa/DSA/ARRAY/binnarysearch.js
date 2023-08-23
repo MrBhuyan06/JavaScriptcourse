@@ -16,5 +16,5 @@ function binarysearch(arr, num) {
   return -1;
 }
 
-let res = binarysearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 7);
+let res = binarysearch([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15], 6);
 console.log(res);
