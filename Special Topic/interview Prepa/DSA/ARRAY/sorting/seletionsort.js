@@ -3,7 +3,7 @@ function bubbleSort(arr) {
     //store the minvalue and minindex
     let minIndex = i;
     let min = arr[i];
-    for (let j = 1; j < arr.length; j++) {
+    for (let j = i + 1; j < arr.length; j++) {
       if (arr[j] < min) {
         min = arr[j];
         minIndex = j;
@@ -17,4 +17,4 @@ function bubbleSort(arr) {
   console.log(arr);
 }
 
-bubbleSort([3, 1, 2]);
+bubbleSort([2, 6, 9, 1, 5]);
