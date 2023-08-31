@@ -8,21 +8,37 @@ const randomColor = () => {
   )})`;
 };
 
-document.querySelector("li").addEventListener("click", function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log(e.target);
-  //prevent the propagation
-//   e.stopPropagation();
-});
+document.querySelector("li").addEventListener(
+  "click",
+  function (e) {
+    this.style.backgroundColor = randomColor();
+    // console.log(e.target);
+    //prevent the propagation
+    // e.stopPropagation();
+    console.log("1");
+  },
+  { capture: false }
+);
 
 //Parent
-document.querySelector("ul").addEventListener("click", function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log(e.target); //
-});
+document.querySelector("ul").addEventListener(
+  "click",
+  function (e) {
+    this.style.backgroundColor = randomColor();
+    console.log(e.target); //
+    // e.stopPropagation();
+    console.log("2");
+  },
+  { capture: false }
+);
 //grand parent
-document.querySelector("header").addEventListener("click", function (e) {
-  this.style.backgroundColor = randomColor();
-  console.log("nav"); //
-  // console.log(e.target); //
-});
+document.querySelector("header").addEventListener(
+  "click",
+  function (e) {
+    this.style.backgroundColor = randomColor();
+    console.log("nav"); //
+    // console.log(e.target); //
+    console.log("3");
+  },
+  { capture: false }
+);
