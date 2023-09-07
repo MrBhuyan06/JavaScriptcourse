@@ -98,30 +98,30 @@ length
 
 //async behaviour Promise
 
-let p1 = new Promise((res, rej) => {
-  let random = Math.trunc(Math.random() * 6 + 1);
-  setTimeout(() => {
-    if (true) {
-      res("p1");
-    }
-  }, random * 1000);
-});
-let p2 = new Promise((res, rej) => {
-  let random = Math.trunc(Math.random() * 6 + 1);
-  setTimeout(() => {
-    if (true) {
-      rej("p2 error");
-    }
-  }, random * 1000);
-});
-let p3 = new Promise((res, rej) => {
-  let random = Math.trunc(Math.random() * 6 + 1);
-  setTimeout(() => {
-    if (true) {
-      res("p3");
-    }
-  }, random * 1000);
-});
+// let p1 = new Promise((res, rej) => {
+//   let random = Math.trunc(Math.random() * 6 + 1);
+//   setTimeout(() => {
+//     if (true) {
+//       res("p1");
+//     }
+//   }, random * 1000);
+// });
+// let p2 = new Promise((res, rej) => {
+//   let random = Math.trunc(Math.random() * 6 + 1);
+//   setTimeout(() => {
+//     if (true) {
+//       rej("p2 error");
+//     }
+//   }, random * 1000);
+// });
+// let p3 = new Promise((res, rej) => {
+//   let random = Math.trunc(Math.random() * 6 + 1);
+//   setTimeout(() => {
+//     if (true) {
+//       res("p3");
+//     }
+//   }, random * 1000);
+// });
 
 /***
  * !race
@@ -131,10 +131,39 @@ let p3 = new Promise((res, rej) => {
  *
  */
 
-Promise.race([p1, p2, p3])
+// Promise.race([p1, p2, p3])
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+/**
+ * any it will return
+ * it will return the fullfilled promise value of one promise
+ * if all the promise is rejected it will return all prmise are rejected
+ *
+ */
+let p1 = new Promise((res, rej) => {
+  if (true) {
+    rej("p1");
+  }
+});
+let p2 = new Promise((res, rej) => {
+  if (true) {
+    rej("p2");
+  }
+});
+let p3 = new Promise((res, rej) => {
+  if (true) {
+    rej("p2");
+  }
+});
+Promise.any([p1, p2, p3])
   .then((data) => {
     console.log(data);
   })
-  .catch((err) => {
-    console.log(err);
+  .catch((error) => {
+    console.log(error);
   });
