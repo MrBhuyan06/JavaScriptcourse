@@ -48,3 +48,50 @@
 // // if (myAge >= 23) {
 // //   console.log("yes u can drive");
 // // }
+//datatype
+// let age = 23;
+// let names = "Abhishek";
+// let isAdult = true;
+// let isPalaced;
+// let isGoodInSubject = null;
+// console.log(
+//   typeof age,
+//   typeof names,
+//   typeof isAdult,
+//   typeof isPalaced,
+//   typeof isGoodInSubject
+// );
+
+// MY name is Abhishek my age is 23 am a frontend dev
+let names = "Abhishek";
+let age = 23;
+let desc = "frontend";
+
+// console.log("My name is " + names + "  my age " + age + "am a " + desc + "dev");
+// ORDER A
+// INVOICE
+// MY NAME, ID DTAE PUR, ITEM NAME COLOR DETAILS
+// {VARIBALE}
+// {
+//   NAME":NAME;
+//   PRDUCT:
+// }
+//TEMPLATE lITERALS
+console.log("My name is " + names + "  my age " + age + "am a " + desc + "dev");
+
+console.log(`My name is ${name} my age ${age}
+ ****************
+
+
+
+
+ //////////
+
+
+
+ 
+   my name 
+ ***************
+ my details
+ **************
+am a ${desc} dev`);
