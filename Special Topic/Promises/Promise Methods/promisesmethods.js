@@ -145,25 +145,61 @@ length
  * if all the promise is rejected it will return all prmise are rejected
  *
  */
-let p1 = new Promise((res, rej) => {
-  if (true) {
-    rej("p1");
-  }
-});
-let p2 = new Promise((res, rej) => {
-  if (true) {
-    rej("p2");
-  }
-});
-let p3 = new Promise((res, rej) => {
-  if (true) {
-    rej("p2");
-  }
-});
-Promise.any([p1, p2, p3])
-  .then((data) => {
-    console.log(data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+// let p1 = new Promise((res, rej) => {
+//   if (true) {
+//     rej("p1");
+//   }
+// });
+// let p2 = new Promise((res, rej) => {
+//   if (true) {
+//     rej("p2");
+//   }
+// });
+// let p3 = new Promise((res, rej) => {
+//   if (true) {
+//     rej("p2");
+//   }
+// });
+// Promise.any([p1, p2, p3])
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+
+//reject and resolve
+
+// let data = Promise.all([
+//   1,
+//   2,
+//   3,
+//   4,
+//   Promise.resolve("res1"),
+//   //   Promise.reject("rej"),
+//   Promise.resolve("rej"),
+// ]);
+// let res = data
+//   .then((data) => {
+//     return data;
+//   })
+//   .catch((error) => {
+//     return error;
+//   });
+// res.then((data) => {
+//   console.log(data);
+// });
+
+//promiseChainng
+
+// let p1 = new Promise((res, rej) => {
+//   if (true) {
+//     res("success");
+//   }
+// });
+// p1.then((data) => {
+//   console.log(data);
+//   return Promise.resolve("successful2");
+// }).then((data) => {
+//   console.log(data);
+// });

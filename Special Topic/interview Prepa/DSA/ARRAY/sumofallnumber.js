@@ -38,3 +38,4 @@ let arr = [1, 2, 3, 4, 5];
 //   i++;
 // }
 // console.log(sum);
+console.log(arr.indexOf(9));
