@@ -26,16 +26,16 @@
 
 //async
 
-function print(gretting) {
-  console.log("start");
-  gretting();
-  console.log("end");
-}
+// function print(gretting) {
+//   console.log("start");
+//   gretting();
+//   console.log("end");
+// }
 
-function gretting() {
-  setTimeout(() => {
-    console.log("hello namaste");
-  }, 1000);
-}
+// function gretting() {
+//   setTimeout(() => {
+//     console.log("hello namaste");
+//   }, 1000);
+// }
 
-print(gretting);
+// print(gretting);
