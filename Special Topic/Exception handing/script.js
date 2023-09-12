@@ -35,3 +35,13 @@ try {
 } catch (err) {
   console.log(err.name);
 }
+
+try {
+  let arr = [1, 2, 3];
+  if (!arr[10]) {
+    throw new RangeError("arry index ouyt of bound");
+  }
+} catch (err) {
+  console.log(err.name);
+  console.log(err.message);
+}
