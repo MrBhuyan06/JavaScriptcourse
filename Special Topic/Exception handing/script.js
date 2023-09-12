@@ -35,12 +35,26 @@ try {
 } catch (err) {
   console.log(err.name);
 }
-
+//range
 try {
   let arr = [1, 2, 3];
   if (!arr[10]) {
     throw new RangeError("arry index ouyt of bound");
   }
+} catch (err) {
+  console.log(err.name);
+  console.log(err.message);
+}
+
+//type error
+
+try {
+  if (!func) {
+    throw new TypeError("undefine is not function");
+  }
+  var func = () => {
+    console.log("logic");
+  };
 } catch (err) {
   console.log(err.name);
   console.log(err.message);
