@@ -47,12 +47,14 @@
 
 // let p1 = new Promise((res, rej) => {
 //   if (true) {
-//     res("p1");
+//     res({
+//       names: "abhisheo",
+//     });
 //   }
 // });
 // let p2 = new Promise((res, rej) => {
 //   if (true) {
-//     res("p2");
+//     rej("p2");
 //   }
 // });
 // let p3 = new Promise((res, rej) => {
@@ -60,9 +62,13 @@
 //     res("p2");
 //   }
 // });
-// Promise.all([p1, p2, p3]).then((data) => {
-//   console.log(data);
-// });
+// Promise.all([p1, p2, p3])
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 // // let res;
 
 // async function resPromise() {
@@ -75,12 +81,43 @@
 // resPromise();
 // console.log(res);
 
-// 2.allsettled
+// 2.
+
+// let p1 = new Promise((res, rej) => {
+//   if (true) {
+//     res({
+//       names: "abhisheo",
+//     });
+//   }
+// });
+// let p2 = new Promise((res, rej) => {
+//   if (true) {
+//     rej("p2");
+//   }
+// });
+// let p3 = new Promise((res, rej) => {
+//   if (true) {
+//     res("p2");
+//   }
+// });
+// Promise.allSettled([p1, p2, p3])
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 /**
  * ! this is return all the settled promise fullfiled and rejected
  * ! each res will covert object
  *  0
 : 
+
+
+
+
+
+
 {status: 'fulfilled', value: 'p1'}
 1
 : 
@@ -102,7 +139,7 @@ length
 //   let random = Math.trunc(Math.random() * 6 + 1);
 //   setTimeout(() => {
 //     if (true) {
-//       res("p1");
+//       rej("p1");
 //     }
 //   }, random * 1000);
 // });
@@ -118,7 +155,7 @@ length
 //   let random = Math.trunc(Math.random() * 6 + 1);
 //   setTimeout(() => {
 //     if (true) {
-//       res("p3");
+//       rej("p3");
 //     }
 //   }, random * 1000);
 // });
@@ -131,7 +168,7 @@ length
  *
  */
 
-// Promise.race([p1, p2, p3])
+// Promise.any([p1, p2, p3])
 //   .then((data) => {
 //     console.log(data);
 //   })
@@ -147,17 +184,17 @@ length
  */
 // let p1 = new Promise((res, rej) => {
 //   if (true) {
-//     rej("p1");
+//     res("p1");
 //   }
 // });
 // let p2 = new Promise((res, rej) => {
 //   if (true) {
-//     rej("p2");
+//     res("p2");
 //   }
 // });
 // let p3 = new Promise((res, rej) => {
 //   if (true) {
-//     rej("p2");
+//     res("p2");
 //   }
 // });
 // Promise.any([p1, p2, p3])
@@ -201,5 +238,26 @@ length
 //   console.log(data);
 //   return Promise.resolve("successful2");
 // }).then((data) => {
+//   conso
+// })le.log(data);
+// });
+
+// let n= Promise((rej,res) =>
+// {
+//     if(true)
+
+//     {
+//         rej()
+//     }
+// let pro = Promise.resolve("promise shotcut");
+// pro.then((data) => {
 //   console.log(data);
 // });
+let pro = Promise.reject("promise shotcut");
+pro
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((e) => {
+    console.log("e");
+  });
