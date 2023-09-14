@@ -185,4 +185,8 @@
 // console.log(largest);
 // console.log(window);
 
-console.log(Abhi);
+// console.log(Abhi);
+
+const arrSlice = [1, 3, 45, 678];
+console.log(arrSlice.splice(2, 1));
+console.log(arrSlice);
