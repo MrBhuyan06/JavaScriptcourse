@@ -26,11 +26,37 @@ function person(name, age, add) {
 // const obj = new person("abhi", "22", "bbsr");
 // console.log(obj);
 
-function Person(name, age, add) {
-  //var this={}
-  this.name = name;
-  this.age = age;
-  this.add = add;
-}
-const obj = Person("Abhi");
-console.log(obj);
+// function Person(name, age, add) {
+//   //var this={}
+//   this.name = name;
+//   this.age = age;
+//   this.add = add;
+// }
+// const obj = Person("Abhi");
+// console.log(obj);
+
+const myObject = {
+  name: "Abhishek",
+  age: 23,
+  add: "BBSR",
+};
+//loop over this object
+
+// for (let i in myObject) {
+//   // console.log(i);
+//   console.log(myObject[i]);
+// }
+
+//using keys
+// Object.keys(myObject).forEach((i) => console.log(myObject[i]));
+// const value = Object.values(myObject).forEach((i) => console.log(i));
+// console.log(value);
+
+//entries
+// const entrie = Object.entries(myObject);
+// console.log(entrie);
+// print the key and value of the above object using Object.entries
+
+// for ([key, value] of Object.entries(myObject)) {
+//   console.log(`key is ${key}: value is ${value}`);
+// }
